@@ -1,0 +1,17 @@
+--BEGIN INPUT ARTICLE--
+Article 13  
+(1) A person under curatorship must obtain the consent of the curator in order to perform any of the following acts; provided, however, that this does not apply to an act provided for in the proviso of Article 9:
+(i) receiving or using any property producing civil fruit;
+(ii) borrowing money or guaranteeing an obligation;
+(iii) performing an act with the purpose of acquiring or losing any right regarding immovables or other significant property;
+(iv) suing any procedural act;
+(v) giving a gift, reaching a settlement, or entering into an arbitration agreement 
+(vi) accepting or renouncing a succession or dividing an estate;
+(vii) refusing an offer of a gift, renouncing a legacy, accepting an offer of gift with burden, or accepting a legacy with burden;
+(viii) constructing a new building, renovating, expanding, or undertaking major repairs;
+(ix) granting a lease for a term that exceeds the period set forth in Article 602; or
+(x) performing any of the acts set forth in the preceding items as a legal representative of a person with qualified legal capacity (meaning a minor, adult ward, or person under curatorship or a person under assistance who is subject to a decision as referred to in Article 17, paragraph (1); the same applies hereinafter).
+(2) At the request of a person as referred to in the main clause of Article 11 or the curator or curator's supervisor, the family court may decide that the person under curatorship must also obtain the consent of the curator before performing an act other than those set forth in each of the items of the preceding paragraph; provided, however, that this does not apply to an act provided for in the proviso to Article 9.
+(3) If the curator does not consent to an act for which the person under curatorship must obtain the curator's consent even though it is unlikely to prejudice the interests of the person under curatorship, the family court may grant permission that operates in lieu of the curator's consent at the request of the person under curatorship.
+(4) An act for which the person under curatorship must obtain the curator's consent is voidable if the person performs it without obtaining the curator's consent or a permission that operates in lieu of it.
+--END INPUT ARTICLE--

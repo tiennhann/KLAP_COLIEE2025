@@ -1,0 +1,22 @@
+--BEGIN TASK DEFINTION--
+# SUMMARY OF ADFs
+The Abstract Dialetical Framework is way to represent law articles into a mathematical structure. 
+Each law article is comprised of:
+1. 1 or more outcomes: the outcome(s) of the article. 
+2. Factors: events, conditions, or things that cause the outcome(s) as described in the article. 
+3. Links between the factors and outcomes representing the relationship between a factor and another factor (or outcome). Each factor either support (true) or attack (false) outcome(s) and/or factor(s).
+## Mathematical Structure (ADF Structure):
+1. The articles, outcomes, and factors form an acylic graph. Each of them is a node.
+2. Each support/attack relationship between a factor and a factor or article is a link between the 2 nodes.
+## Example 
+Convert Article 1 ("Article 1
+    (1) Private rights must be congruent with the public welfare.
+    (2) The exercise of rights and performance of duties must be done in good faith.
+    (3) Abuse of rights is not permitted.
+") into a ADF Structure:
+1. Outcomes":'article1_violated'
+2. Factors":'private_rights_congruent_with_public_welfare','the_excersie_of_rights_done_in_good_faith','abuse_of_rights'
+3. Links:('private_rights_congruent_with_public_welfare','attack','article1_violated'),('the excersie_of_rights_done_in_good_faith','attack','article1_violated'),('abuse_of_rights','support','article1_violated')
+# Task definition
+You will be given an "input_article", convert it to an ADF Structre.
+--END TASK DEFINITION--
