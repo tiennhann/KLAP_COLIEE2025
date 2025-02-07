@@ -42,46 +42,46 @@ if __name__ == "__main__":
     module = ADFConverter()
     output = module.forward(article_text=article, task_definition=task_definition)
     print(output)
-    # Example structure of output (this should be replaced with actual output structure)
-    output = {
-        "nodes": {
-            "baselevel_factors": output.adf_structure,
-            "abstract_factors": ["node3", "node4"],
-            "outcomes": ["node5"]
-        },
-        "edges": [
-            {"source": "node1", "target": "node3", "type": "support"},
-            {"source": "node2", "target": "node4", "type": "attack"},
-            {"source": "node3", "target": "node5", "type": "support"}
-        ]
-    }
+    # # Example structure of output (this should be replaced with actual output structure)
+    # output = {
+    #     "nodes": {
+    #         "baselevel_factors": output.adf_structure,
+    #         "abstract_factors": ["node3", "node4"],
+    #         "outcomes": ["node5"]
+    #     },
+    #     "edges": [
+    #         {"source": "node1", "target": "node3", "type": "support"},
+    #         {"source": "node2", "target": "node4", "type": "attack"},
+    #         {"source": "node3", "target": "node5", "type": "support"}
+    #     ]
+    # }
 
-    # Create a directed graph
-    G = nx.DiGraph()
+    # # Create a directed graph
+    # G = nx.DiGraph()
 
-    # Add nodes with categories
-    for category, nodes in output["nodes"].items():
-        for node in nodes:
-            G.add_node(node, category=category)
+    # # Add nodes with categories
+    # for category, nodes in output["nodes"].items():
+    #     for node in nodes:
+    #         G.add_node(node, category=category)
 
-    # Add edges with types
-    for edge in output["edges"]:
-        G.add_edge(edge["source"], edge["target"], type=edge["type"])
+    # # Add edges with types
+    # for edge in output["edges"]:
+    #     G.add_edge(edge["source"], edge["target"], type=edge["type"])
 
-    # Define colors for node categories
+    # # Define colors for node categories
 
-    # Define colors for edge types
-    edge_colors = {
-        "support": "green",
-        "attack": "red"
-    }
+    # # Define colors for edge types
+    # edge_colors = {
+    #     "support": "green",
+    #     "attack": "red"
+    # }
 
 
-    # Get edge colors
-    edge_color_list = [edge_colors[G.edges[edge]["type"]] for edge in G.edges]
+    # # Get edge colors
+    # edge_color_list = [edge_colors[G.edges[edge]["type"]] for edge in G.edges]
 
-    # Draw the graph
-    pos = nx.spring_layout(G)
-    nx.draw(G, pos, with_labels=True, node_shape='s', node_color='white',edge_color=edge_color_list, node_size=3000, font_size=10, font_weight='bold')
-    plt.savefig("graph_output.png", format="png")
+    # # Draw the graph
+    # pos = nx.spring_layout(G)
+    # nx.draw(G, pos, with_labels=True, node_shape='s', node_color='white',edge_color=edge_color_list, node_size=3000, font_size=10, font_weight='bold')
+    # plt.savefig("graph_output.png", format="png")
     # plt.show()
