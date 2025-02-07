@@ -1,0 +1,53 @@
+[
+  {
+    "id": "H21-1-1",
+    "label": "Y",
+    "query": "Acceptance made by a minor that received an offer of gifts without burden without getting consent from his/her statutory agent may not be rescinded.",
+    "paragraphs": "Article 5\n(1) A minor must obtain the consent of the minor's legal representative to perform a juridical act;provided, however, that this does not apply to a juridical act for merely acquiring a right or being released from an obligation.\n(2) A juridical act in contravention of the provisions of the preceding paragraph is voidable.\n(3) Notwithstanding the provisions of paragraph (1), a minor may freely dispose of property that the legal representative has permitted the minor to dispose of for a specified purpose, to an extent that falls within the scope of that purpose. The same applies if the minor disposes of property that the legal representative has permitted the minor to dispose of without specifying a purpose."
+  },
+  {
+    "id": "H21-1-2",
+    "label": "N",
+    "query": "If a minor, after getting permission for carrying a business from his/her statutory agent, performs an act unrelated to the business without getting consent of the statutory agent, that act may not be rescinded.",
+    "paragraphs": "Article 6\n(1) A minor who is permitted to conduct one or multiple types of business has the same capacity to act as an adult as far as that business is concerned.\n(2) In a case as referred to in the preceding paragraph, if there are grounds that make the minor unable to sustain that business, the legal representative may revoke or limit the permission therefor in accordance with the provisions of Part IV (Relatives)."
+  },
+  {
+    "id": "H21-1-3",
+    "label": "Y",
+    "query": "The purchase of daily household items may not be rescinded, even if an adult ward performed the act.",
+    "paragraphs": "Article 9\nA juridical act performed by an adult ward is voidable;provided, however, that this does not apply to the purchase of daily necessities or to any other act involved in day-to-day life."
+  },
+  {
+    "id": "H21-1-4",
+    "label": "N",
+    "query": "If a person under curatorship performs, without getting the consent, an act that requires  getting consent from his/her curator, the curator may ratify that act, but may not rescind that act.",
+    "paragraphs": "Article 13\n(1) A person under curatorship must obtain the consent of the curator in order to perform any of the following acts;provided, however, that this does not apply to an act provided for in the proviso of Article 9:\n(i) receiving or using any property producing civil fruit;\n(ii) borrowing money or guaranteeing an obligation;\n(iii) performing an act with the purpose of acquiring or losing any right regarding immovables or other significant property;\n(iv) suing any procedural act;\n(v) giving a gift, reaching a settlement, or entering into an arbitration agreement (meaning an arbitration agreement as provided in Article 2, paragraph (1) of the Arbitration Act (Act No. 138 of 2003));\n(vi) accepting or renouncing a succession or dividing an estate;\n(vii) refusing an offer of a gift, renouncing a legacy, accepting an offer of gift with burden, or accepting a legacy with burden;\n(viii) constructing a new building, renovating, expanding, or undertaking major repairs;\n(ix) granting a lease for a term that exceeds the period set forth in Article 602; or\n(x) performing any of the acts set forth in the preceding items as a legal representative of a person with qualified legal capacity (meaning a minor, adult ward, or person under curatorship or a person under assistance who is subject to a decision as referred to in Article 17, paragraph (1); the same applies hereinafter).\n(2) At the request of a person as referred to in the main clause of Article 11\nor the curator or curator's supervisor, the family court may decide that the person under curatorship must also obtain the consent of the curator before performing an act other than those set forth in each of the items of the preceding paragraph;provided, however, that this does not apply to an act provided for in the proviso to Article 9.\n(3) If the curator does not consent to an act for which the person under curatorship must obtain the curator's consent even though it is unlikely to prejudice the interests of the person under curatorship, the family court may grant permission that operates in lieu of the curator's consent at the request of the person under curatorship.\n(4) An act for which the person under curatorship must obtain the curator's consent is voidable if the person performs it without obtaining the curator's consent or a permission that operates in lieu of it.\nArticle 120\n(1) An act that is voidable on the grounds of the qualified legal capacity to act of the person who did the act may be rescinded only by the person with qualified legal capacity (in the case of an act performed by the person as a legal representative of another person with limited capacity, including that other person with limited capacity), or an agent or successor thereof, or a person who has the authority to give consent thereto.\n(2) An act that is voidable on the grounds of a mistake, fraud or duress may be rescinded only by the person who made the defective manifestation of intention, or an agent or successor thereof.\nArticle 122\nA voidable act may not be rescinded after the person prescribed in Article 120\nratifies it."
+  },
+  {
+    "id": "H21-1-5",
+    "label": "N",
+    "query": "The person in question may not request a  commencement of guardianship, but he/she may request a  commencement of curatorship.",
+    "paragraphs": "Article 7\nThe family court may decide to commence a guardianship in respect of a person who constantly lacks the capacity to appreciate the person's own situation due to a mental disorder, at the request of the person in question, that person's spouse, that person's relative within the fourth degree of kinship, the person's guardian of a minor, the person's supervisor of a minor's guardian, the person's curator, the person's curator's supervisor, the person's assistant, the person's assistant's supervisor, or a public prosecutor.\nArticle 11\nThe family court may decide to commence a curatorship in respect of a person whose capacity to appreciate their own situation is extremely inadequate due to a mental disorder, at the request of the person in question, the person's spouse, the person's relative within the fourth degree of kinship, the guardian, the guardian's supervisor, the assistant, the assistant's supervisor, or a public prosecutor;provided, however, that this does not apply to a person in respect of whom a cause set forth in Article 7\nexists."
+  },
+  {
+      "id": "H18-2-2",
+      "label": "Y",
+      "query": "In cases where an individual rescues another person from getting hit by a car by pushing that person out of the way, causing the person's luxury kimono to get dirty, the rescuer does not have to compensate damages for the kimono.",
+      "paragraphs": "Article 698 If a manager engages in benevolent intervention in another's business in order to allow a principal to escape imminent danger to the principal's person, reputation, or property, the manager is not liable to compensate for damage resulting from this unless the manager has acted in bad faith or with gross negligence."
+  },
+  {
+      "id": "H30-1-A",
+      "label": "Y",
+      "query": "An unborn child may not be given a gift on the donor's death.",
+      "paragraphs": "Article 3\n (1) The enjoyment of private rights commences at birth. (2) Unless otherwise prohibited by applicable laws, regulations, or treaties, foreign nationals enjoy private rights."
+  },
+  {
+      "id":"H18-1-2",
+      "label":"N",
+      
+      "paragraphs":
+      "Article 565 \n The provisions of the preceding three Articles apply mutatis mutandis if the right transferred by the seller to the buyer does not conform to the terms of the contract (including the case in which the seller fails to transfer part of a right that belongs to another person).\n Article 566 \n If the subject matter delivered by the seller to the buyer does not conform to the terms of the contract with respect to the kind or quality, and the buyer fails to notify the seller of the non-conformity within one year from the time when the buyer becomes aware of it, the buyer may not demand cure of the non-conformity of performance, demand a reduction of the price, claim compensation for loss or damage, or cancel the contract, on the grounds of the non-conformity;provided, however, that this does not apply if the seller knew or did not know due to gross negligence the non-conformity at the time of the delivery."
+      "query":
+      "There is a limitation period on pursuance of warranty if there is restriction due to superficies on the subject matter, but there is no restriction on pursuance of warranty if the seller's rights were revoked due to execution of the mortgage."
+  }
+]

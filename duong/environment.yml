@@ -1,0 +1,10 @@
+name: coliee2025
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - dspy
+  - networkx
+  - matplotlib

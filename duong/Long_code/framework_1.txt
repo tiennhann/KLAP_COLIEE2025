@@ -20,3 +20,9 @@ Convert Article 1 ("Article 1
 # Task definition
 You will be given an "input_article", convert it to an ADF Structre.
 --END TASK DEFINITION--
+
+# Example
+Given Query ("In cases where an individual rescues another person from getting hit by a car by pushing that person out of the way, causing the person's luxury kimono to get dirty, the rescuer does not have to compensate damages for the kimono.")
+For baselevel factor (BF_7,'The manager acted in bad faith'), we have to answer the question:
+("Does the idea: 'In cases where an individual rescues another person from getting hit by a car by pushing that person out of the way, causing the person's luxury kimono to get dirty, the rescuer does not have to compensate damages for the kimono', align with: 'the manager acted in the bad faith'?)
+The answer is: No. Because the beneficiary(the victim) does not acted in the bad faith. They act in good faith to rescue the person.
