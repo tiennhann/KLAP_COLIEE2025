@@ -1,15 +1,6 @@
 from typing import List, Literal, Tuple
 import dspy
 
-# Configure DSPy with the language model
-dspy.settings.configure(
-    lm=dspy.LM(
-        model="ollama_chat/llama3.2",  # Changed to include provider prefix
-        api_base="http://localhost:11434",
-        max_tokens=20000
-    )
-)
-
 class QueryEntailmentCheckTask(dspy.Signature):
     task_definition=dspy.InputField(desc="The definition for the task.")
     query=dspy.InputField(desc="A sentence, a question, or a statement.")

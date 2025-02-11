@@ -1,0 +1,21 @@
+--BEGIN TASK DEFINTION--
+# SUMMARY OF ADFs
+The Abstract Dialetical Framework is way to represent law articles into a mathematical structure. 
+Each law article is comprised of:
+1. 1 or more outcomes: the outcome(s) of the article. 
+2. Abstract factors: the issues cause the outcomes as described in the article.
+3. Baselevel Factors: particular events, conditions, or things that specifically support the happen of the abstract factors to the outcomes as described in the article. 
+4. Links between the factors and outcomes representing the relationship between a factor and another factor (or outcome). Each factor either support (true) or attack (false) outcome(s) and/or factor(s).
+## Mathematical Structure (ADF Structure):
+1. The outcomes, abstract factors and baselevel factors form an acylic graph. Each of them is a node.
+2. Each support/attack relationship between baselevel factors and abstract factors or a abstract factors and outcome is a link between the 2 nodes.
+## Example 
+Convert Article 698 ("Article 698:
+If a manager engages in benevolent intervention in another's business in order to allow a principal to escape imminent danger to the principal's person, reputation, or property, the manager is not liable to compensate for damage resulting from this unless the manager has acted in bad faith or with gross negligence.") into a ADF Structure:
+1. Outcomes:(O_1,'The manager is liable to compensate for damages')
+2. Abstract factors: (AF_1, 'The manager exhibited gross negligence or acted in bad faith'), (AF_2, 'The manager's actions aimed to allow the principal to escape imminent danger')
+2. Baselevel Factors":(BF_1,'The manager's intervention was benevolent'),(BF_2,'There were damages resulting from the intervention'), (BF_3,'The actions aimed to allow the escape of imminent danger to the person'), (BF_4,'The actions aimed to allow the escape of imminent danger to reputation'), (BF_5,'The actions aimed to allow the escape of imminent danger to property'), (BF_6,'The manager exhibited gross negligence'), (BF_7,'The manager acted in bad faith').
+3. Links:((AF_1,'The manager exhibited gross negligence or acted in bad faith'), 'support',(O_1,'The manager is liable to compensate for damages')), ((AF_2,'The manager's actions aimed to allow the principal to escape imminent danger'),'attack',(O_1,'The manager is liable to compensate for damages')), ((BF_1,'The manager's intervention was benevolent'), 'support', (O_1,'The manager is liable to compensate for damages')), ((BF_2,'There were damages resulting from the intervention'), 'attack', (O_1,'The manager is liable to compensate for damages')), ((BF_3,'The actions aimed to allow the escape of imminent danger to the person'), 'support', (AF_2, 'The manager's actions aimed to allow the principal to escape imminent danger')), ((BF_4,'The actions aimed to allow the escape of imminent danger to reputation'),'support',(AF_2, 'The manager's actions aimed to allow the principal to escape imminent danger')), ((BF_5,'The actions aimed to allow the escape of imminent danger to property'),'support',(AF_2, 'The manager's actions aimed to allow the principal to escape imminent danger')), ((BF_6,'The manager exhibited gross negligence'),'support', (AF_1, 'The manager exhibited gross negligence or acted in bad faith')), ((BF_7,'The manager acted in bad faith'),'support', (AF_1, 'The manager exhibited gross negligence or acted in bad faith'))
+# Task definition
+You will be given an "input_article", convert it to an ADF Structre. Using only word come from article, or only necessary common words to complete the sentences. Each component of outcomes, abstract factors, baselevel factor must be a complete sentence. You need to mark each component with a symbol for example AF_1 for abstract factor number 1.
+--END TASK DEFINITION-
