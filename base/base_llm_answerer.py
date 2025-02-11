@@ -1,11 +1,12 @@
 from typing import List, Literal, Tuple
 import dspy
+from response import Response
 
 class QueryEntailmentCheckTask(dspy.Signature):
     task_definition=dspy.InputField(desc="The definition for the task.")
     query=dspy.InputField(desc="A sentence, a question, or a statement.")
     input_articles=dspy.InputField(desc="The input articles that are relevant to the query.")
-    answer:Literal["Y", "N"]=dspy.OutputField(desc="Answer if the query logically follows from the input articles.")
+    answer:bool=dspy.OutputField(desc="Answer if the query logically follows from the input articles.")
 
 class BaseLLMAnswerer(dspy.Module):
     def __init__(self):
@@ -16,7 +17,10 @@ class BaseLLMAnswerer(dspy.Module):
         self.task_definition = task_definition
 
     def forward(self, articles, query):
-        return self.agent(input_articles=articles, task_definition=self.task_definition, query=query)
+        answer = self.agent(input_articles=articles, task_definition=self.task_definition, query=query).answer
+        if answer:
+            return Response("Y")
+        return Response("N")
 
 if __name__ == "__main__":
     with open("./base_llm_task_definition.txt", "r") as f:
