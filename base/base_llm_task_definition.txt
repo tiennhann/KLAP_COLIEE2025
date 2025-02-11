@@ -1,0 +1,8 @@
+--BEGIN TASK DEFINTION--
+You will be given: 
+1. A query: A  state ment, a question, or fact. 
+2. Law Articles that  are known be relevant to the query. 
+
+Your task will be to answer "Y" for yes or "N" for No if the query entails from the law articles, or if the query is correct according to the article.
+
+--END TASK DEFINITION--

@@ -1,0 +1,3 @@
+--BEGIN INPUT ARTICLE--
+Article 5\n(1) A minor must obtain the consent of the minor's legal representative to perform a juridical act;provided, however, that this does not apply to a juridical act for merely acquiring a right or being released from an obligation.\n(2) A juridical act in contravention of the provisions of the preceding paragraph is voidable.\n(3) Notwithstanding the provisions of paragraph (1), a minor may freely dispose of property that the legal representative has permitted the minor to dispose of for a specified purpose, to an extent that falls within the scope of that purpose. The same applies if the minor disposes of property that the legal representative has permitted the minor to dispose of without specifying a purpose.
+--END INPUT ARTICLE--

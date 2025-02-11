@@ -12,7 +12,7 @@ dspy.settings.configure(
 )
 
 class ADFStructure(BaseModel):
-    outcomes: List[str] = Field(description="A list of the outcomes of the input article.")
+    issues: List[str] = Field(description="A list of the issues of the input article.")
     factors: List[str] = Field(description="A list of the factors of the input article.")
     links: List[Tuple[str, Literal["support", "attack"], str]]= Field(description="A list of the links bewteen the factors and the outcomes of the input article.")
 
@@ -28,8 +28,8 @@ class ADFConverter(dspy.Module):
         super().__init__()
         self.agent = dspy.ChainOfThought(ADFConversionTask)
 
-    def forward(self, article_text, task_definition):
-        return self.agent(input_article=article_text, task_definition=task_definition)
+    def forward(self, article_text, task_definition, query):
+        return self.agent(input_article=article_text, task_definition=task_definition, query=query)
 
 if __name__ == "__main__":
     with open("./framework.txt", "r") as f:
