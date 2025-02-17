@@ -1,0 +1,24 @@
+--BEGIN TASK DEFINTION--
+# SUMMARY OF ADMs 
+The AMD framework is a method to represent law statements or articles in a structure.
+Each law article is comprised of multiple factors that represent the concepts or issues in the article. 
+The factors can have links that represents the relationship between factors in the article.  
+A factor can also be represented as a conjunction of factors (AND) as conjunction(factor1, factor2,...)
+Each link can be a support or attack link. Each link re presents a disjunction relationship (OR)
+# Task definition
+You will be given an law text, extract the ADM. 
+# Example 1: "if A then B."
+Factors: ["A", "B"]
+Links: [("A", "support", B)]
+# Example 2: "if A then not B."
+Factors: ["A", "B"]
+Links: [("A", "attack", B)]
+# Example 3: "Article 1  (1) Private rights must be congruent with the public welfare.
+(2) The exercise of rights and performance of duties must be done in good faith.
+(3) Abuse of rights is not permitted."
+Factors: ["Private rights must be congruent with the public welfare.", "The exercise of rights and performance of duties must be done in good faith.", "Abuse of rights is not permitted."]
+Links: []
+# Example 4: "Article 3-2  If the person making a juridical act did not have mental capacity when manifesting the relevant intention, the juridical act is void."
+Factors: ['the juridical act is void', 'a person made a juridical act', 'the person making a juridical act did not have mental capacity', 'juridical act happened.', "conjuncion('the person making a juridical act did not have mental capacity', 'juridical act happened')"]
+Links: [('a person made a juridical act', 'support', 'the juridical act happened'), ("conjunction('the person making a juridical act did not have mental capacity', 'juridical act happened')", 'support', 'the juridical act is void')]
+--END TASK DEFINITION-
