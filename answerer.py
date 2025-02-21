@@ -32,5 +32,5 @@ if __name__ == "__main__":
     with open("./test.txt", "r") as f:
         text = "".join(f.readlines())
     answerer = Answerer(debug=True)
-    answer = answerer.answer(text, "")
+    answer = answerer.answer(text, "If a person under curatorship performs, without getting the consent, an act that requires  getting consent from his/her curator, the curator may ratify that act, but may not rescind that act")
     print(answer)

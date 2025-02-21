@@ -11,7 +11,7 @@ class MDATask(dspy.Signature):
     input_text = dspy.InputField(
         desc="The input text from which to extract the MDA structure."
     )
-    answer:str= dspy.OutputField()
+    answer:List[str]= dspy.OutputField()
 
 
 class MDAExtractor(dspy.Module):
@@ -24,7 +24,13 @@ class MDAExtractor(dspy.Module):
 
     def forward(self, text):
         converted = self.task(input_text=text, task_definition=self.task_definition)
-        return converted.answer
+        atoms = converted.answer
+        for i in range(len(atoms)):
+            atom = atoms[i]
+            if not atom.endswith("."):
+                atom += "."
+                atoms[i] = atom
+        return "".join(atoms)
 
 
 if __name__ == "__main__":

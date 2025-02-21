@@ -1,8 +1,6 @@
 import json
 
-from base.base_llm_answerer import BaseLLMAnswerer
-from long.loose_adf_answerer import LooseADFAnswerer
-from long.strict_adf_answerer import ADFAnswerer
+from answerer import Answerer
 
 import dspy
 dspy.settings.configure(
@@ -14,17 +12,23 @@ dspy.settings.configure(
 )
 
 cases = []
-with open('train_as_test.json') as f:
+with open('testing_data.json') as f:
     cases = json.load(f)
 
 correct = 0
 wrong=0
-module = BaseLLMAnswerer()
+error = 0
+module = Answerer()
 for c in cases:
     query=c["query"]
     articles=c["paragraphs"]
     expected=c["label"]
-    l= module.forward(articles=articles, query=query).answer
+    try:
+        l= module.answer(article=articles, query=query)
+    except:
+        error += 1
+        continue
+    l = "Y" if l else "N"
     if l == expected:
         correct += 1
     else:
@@ -32,4 +36,4 @@ for c in cases:
 
     print(correct, "correct", wrong, "wrongs", correct + wrong, "out of", len(cases), "tested")
 
-print(correct, "/", len(cases))
+print(correct, "/", len(cases), "with", error, "errors")
