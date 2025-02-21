@@ -4,13 +4,21 @@
 % links: link(Src, Rel, Dst)
 
 % every factor, abstract factor, or root is a node.
-node(N) :- factor(N).
-node(N) :- afactor(N).
-node(N) :- root(N).
+% node(N) :- factor(N).
+% node(N) :- afactor(N).
+% node(N) :- root(N).
 
 % link types
-ltype(0). % support
-ltype(1). % attack
+% ltype(0). % support
+% ltype(1). % attack
+
+% query link activates bfactor
+bfactor(X) :- link(sup(query, bfactor(X))).
+
+
+afactor(X) :- link(sup(bfactor(Y), afactor(X))), bfactor(Y).
+
+
 
 % Rel must be a link type
 :- link(_, Rel, _), not ltype(Rel).

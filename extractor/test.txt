@@ -1,0 +1,35 @@
+1. ANGELIC Structure (Articles 565 & 566)
+Root Node (Legal Conclusion)
+	•	Buyer Entitled to Remedies
+	◦	Determines whether the buyer may demand cure, price reduction, damages, or cancellation for non-conformity.
+Abstract Factors
+	1	Non-Conformity of Right (A1)
+	◦	Applies when the transferred right does not conform to the contract terms (e.g., part of the right belongs to someone else).
+	2	Non-Conformity of Goods (A2)
+	◦	Applies when the delivered item differs from the agreed kind or quality.
+	3	Timely Notice or Seller’s Knowledge (A3)
+	◦	Implies the buyer is not time-barred, either because the buyer gave notice within one year or because the seller knew or was grossly negligent, thus negating the one-year bar.
+Base-Level Factors
+	1	B1: Right Does Not Match Contract
+	◦	The transferred right does not conform to the contract.
+	2	B2: Partial Right Belongs to a Third Party
+	◦	The seller has transferred only part of a right that actually belongs to another person.
+	3	B3: Delivered Item Does Not Match Kind or Quality
+	◦	The delivered item differs from the agreed kind or quality.
+	4	B4: Buyer Fails to Notify Within One Year
+	◦	If the buyer does not notify the seller within one year of discovering non-conformity, the buyer is barred from remedies.
+	5	B5: Seller Knew or Was Grossly Negligent
+	◦	If the seller knew or was grossly negligent about the non-conformity, the one-year bar (B4) does not apply.
+Links Between Factors (Support or Attack)
+	•	B1 → Supports → A1
+	◦	Non-conforming right supports the abstract factor “Non-Conformity of Right.”
+	•	B2 → Supports → A1
+	◦	Partial right from a third party also supports “Non-Conformity of Right.”
+	•	B3 → Supports → A2
+	◦	Goods that do not match kind or quality support “Non-Conformity of Goods.”
+	•	B4 → Attacks → A3
+	◦	If the buyer fails to notify in time, that attacks the factor “Timely Notice or Seller’s Knowledge.”
+	•	B5 → Attacks → B4 (indirectly supporting A3)
+	◦	If the seller knew or was grossly negligent, it overrides the buyer’s failure to notify and thus supports the buyer’s ability to claim remedies.
+Root Node Logic:
+	•	Buyer is entitled to remedies if A1 or A2 is established (i.e., some non-conformity), and A3 is not negated by B4 (unless overridden by B5).
