@@ -5,15 +5,6 @@ from pydantic import BaseModel, Field
 import networkx as nx
 import matplotlib.pyplot as plt
 
-# Configure DSPy with the language model
-dspy.settings.configure(
-    lm=dspy.LM(
-        model="ollama_chat/llama3:8b",  # Changed to include provider prefix
-        api_base="http://localhost:11434",
-        max_tokens=20000,
-    )
-)
-
 class MDATask(dspy.Signature):
     """Signature for converting legal text to an ADF structure"""
     task_definition = dspy.InputField(desc="The definition for the task.")
@@ -37,6 +28,15 @@ class MDAExtractor(dspy.Module):
 
 
 if __name__ == "__main__":
+    # Configure DSPy with the language model
+    dspy.settings.configure(
+        lm=dspy.LM(
+            model="ollama_chat/llama3:8b",  # Changed to include provider prefix
+            api_base="http://localhost:11434",
+            max_tokens=20000,
+        )
+    )
+
     with open("./article.txt", "r") as f:
         article = "".join(f.readlines())
 
