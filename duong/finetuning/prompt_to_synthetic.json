@@ -1,0 +1,11 @@
+[
+    {
+        "id": 0,
+        "label": [
+            "True",
+            "False"
+        ],
+        "prompt": "{{premise}}\nAngelic structure: {{angelic_st}}\nHypothesis: {{hypothesis}}\nRelationship of hypothesis to angelic structure: {{query_rl}}\nAnswer: That Angelic structure is incorrect that fails the hypothesis .Revising it so that it prove the hypothesis."
+    }
+ 
+]
