@@ -1,6 +1,8 @@
+
+%%% naive approach, ignore relationship between abstract factor
 query.
 % query link activates bfactor
-bfactor(X) :- sup(query, bfactor(X)).
+bfactor(X) :- entail((query, bfactor(X))).
 
 % baselevel factor activate abstract factor
 sup(afactor(X)) :- sup(bfactor(Y), afactor(X)), bfactor(Y).
