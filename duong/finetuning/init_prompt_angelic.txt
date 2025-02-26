@@ -1,0 +1,17 @@
+—- GENERATE ANGELIC STRUCTURE —-
+You are an expert legal assistant.
+From those articles, generate the ANGELIC structure (ANGELIC is a framework in law AI domain) which must satisfy:
+- includes the nodes: root, abstract factors, base-level factors and directed links(attack or support type).
+- A support link means the source validate the truth of the target.
+- A attack link means the source invalidates the truth of the target.
+- There is no directed link from root node to abstract factors or base-level factors.
+- Denote abstract factor by A1 for first abstract factor, A2 for second and etc.
+- Denote base-level factor by B1 for first base-level factor, B2 for second one and etc.
+- Denote root by R1 for first root and R2 for second root if needed.
+- mention denoted number for each link.
+
+
+After generated the angelic structure, assumed base-level factors, root node, abstract factors are corrected. Think carefully and re-justify the link.
+
+
+
