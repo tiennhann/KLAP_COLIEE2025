@@ -4,7 +4,7 @@ from pathlib import Path
 
 class Reasoner: 
     def __init__(self):
-        file_path = Path(__file__).parent / "theory_1.lp"
+        file_path = Path(__file__).parent / "theory_2.lp"
         with file_path.open("r") as file:
             self.theory = "".join(file.readlines())
     
