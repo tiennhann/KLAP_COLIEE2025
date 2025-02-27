@@ -1,0 +1,30 @@
+--BEGIN TASK DEFINTION--
+For Articles:
+Article 698 If a manager engages in benevolent intervention in another's business in order to allow a principal to escape imminent danger to the principal's person, reputation, or property, the manager is not liable to compensate for damage resulting from this unless the manager has acted in bad faith or with gross negligence.
+We have ANGELIC Structure:
+1. Nodes
+Root
+R1: “The manager is not liable for damage resulting from the intervention.”
+
+Abstract Factors:
+A1: “Benevolent intervention in order to allow the principal to escape imminent danger.”
+A2: “Manager acted in bad faith or with gross negligence.”
+
+Base‐Level Factors:
+B1: “Principal faced imminent danger to person, reputation, or property.”
+B2: “Manager intervened benevolently in the principal’s business to avert that danger.”
+B3: “Manager’s conduct was in bad faith or with gross negligence.”
+
+Then, for hypothesis: 
+"In cases where an individual rescues another person from getting hit by a car by pushing that person out of the way, causing the person's luxury kimono to get dirty, the rescuer does not have to compensate damages for the kimono."
+
+we have query entail each base level factors:
+B1: Entailed
+B2: Entailed
+B3: Not entailed
+
+
+Converts the above directed link into the below ASP:
+entail(query, node(bfactor(B1))).
+entail(query, node(bfactor(B2))).
+--END TASK DEFINITION-

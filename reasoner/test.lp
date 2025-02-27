@@ -1,9 +1,14 @@
-sup(bfactor(1), afactor(1)).
-sup(bfactor(2), afactor(1)).
-sup(bfactor(3), afactor(2)).
-atk(bfactor(4), afactor(3)).
-atk(bfactor(5), bfactor(4)).
-sup(afactor(1), root(0)).
-sup(afactor(2), root(0)).
-atk(afactor(3), root(0)).
-sup(query, bfactor(0)).
+link(support(node(bfactor(1)), node(root(1)))).
+link(attack(node(bfactor(7)),node(bfactor(1)))).
+link(attack(node(afactor(2)),node(bfactor(1)))).
+link(attack(node(afactor(3)),node(bfactor(7)))).
+link(attack(node(afactor(3)),node(bfactor(2)))).
+link(support(node(bfactor(2)), node(afactor(3)))).
+link(support(node(bfactor(3)), node(afactor(3)))).
+link(support(node(bfactor(4)), node(afactor(2)))).
+link(support(node(bfactor(5)), node(afactor(2)))).
+link(support(node(bfactor(6)), node(afactor(2)))).
+
+entail(query, node(bfactor(1))).
+entail(query, node(bfactor(6))).
+entail(query, node(bfactor(7))).

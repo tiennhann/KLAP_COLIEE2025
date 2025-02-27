@@ -1,28 +1,46 @@
 --BEGIN TASK DEFINTION--
-1. ANGELIC Structure (Articles 565 & 566)
+For Articles:
+Article 698 If a manager engages in benevolent intervention in another's business in order to allow a principal to escape imminent danger to the principal's person, reputation, or property, the manager is not liable to compensate for damage resulting from this unless the manager has acted in bad faith or with gross negligence.
+We have ANGELIC Structure:
+1. Nodes
+Root
+R1: “The manager is not liable for damage resulting from the intervention.”
 
-Links Between Factors (Support or Attack)
-	•	B1 → Supports → A1
-	◦	Non-conforming right supports the abstract factor “Non-Conformity of Right.”
-	•	B2 → Supports → A1
-	◦	Partial right from a third party also supports “Non-Conformity of Right.”
-	•	B3 → Supports → A2
-	◦	Goods that do not match kind or quality support “Non-Conformity of Goods.”
-	•	B4 → Attacks → A3
-	◦	If the buyer fails to notify in time, that attacks the factor “Timely Notice or Seller’s Knowledge.”
-	•	B5 → Attacks → B4 (indirectly supporting A3)
-	◦	If the seller knew or was grossly negligent, it overrides the buyer’s failure to notify and thus supports the buyer’s ability to claim remedies.
-Root Node Logic:
-	•	Buyer is entitled to remedies if A1 or A2 is established (i.e., some non-conformity), and A3 is not negated by B4 (unless overridden by B5).
+Abstract Factors:
+A1: “Benevolent intervention in order to allow the principal to escape imminent danger.”
+A2: “Manager acted in bad faith or with gross negligence.”
 
-Converts the above angelic structure into the below ASP:
-sup(bfactor(1), afactor(1)).
-sup(bfactor(2), afactor(1)).
-sup(bfactor(3), afactor(2)).
-atk(bfactor(4), afactor(3)).
-atk(bfactor(5), bfactor(4)).
-sup(afactor(1), root(0)).
-sup(afactor(2), root(0)).
-atk(afactor(3), root(0)).
-sup(query, bfactor(0)).
+Base‐Level Factors:
+B1: “Principal faced imminent danger to person, reputation, or property.”
+B2: “Manager intervened benevolently in the principal’s business to avert that danger.”
+B3: “Manager’s conduct was in bad faith or with gross negligence.”
+B4: “Damage actually resulted from the manager’s intervention.”
+(Often included to show that there is damage for which liability might be asserted. It need not directly link to the conclusion but triggers the question of liability.)
+
+2. Directed Links:
+Below, “S” = support link, “A” = attack link.
+
+B1 → A1 (S)
+
+Having an imminent danger to principal (B1) supports (helps establish) that the manager’s act was truly “benevolent intervention in imminent danger” (A1).
+B2 → A1 (S)
+
+Showing the manager did in fact intervene benevolently (B2) likewise supports A1.
+A1 → R1 (S)
+
+If it is established that the intervention was a benevolent act to avert imminent harm (A1), then that supports the conclusion that the manager is not liable (R1), per Article 698’s main rule.
+B3 → A2 (S)
+
+Proof the manager acted in bad faith or with gross negligence (B3) supports the abstract factor that the manager’s conduct was of that sort (A2).
+A2 → R1 (A)
+
+If the manager was in bad faith or grossly negligent (A2), it attacks (negates) the manager’s non‐liability (R1). In other words, A2 defeats R1 under the statutory exception.
+
+
+Converts the above directed link into the below ASP:
+link(support(node(bfactor(B1)),node(afactor(A1)))).
+link(support(node(bfactor(B2)),node(afactor(A1)))).
+link(support(node(bfactor(B3)),node(afactor(A2)))).
+link(support(node(afactor(A1)),node(root(R1)))).
+link(attack(node(afactor(A2)),node(root(R1)))).
 --END TASK DEFINITION-
