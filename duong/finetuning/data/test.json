@@ -1,0 +1,18 @@
+[
+    {
+        "input": "hi",
+        "output": "there"
+    },
+    {
+        "input": "tik",
+        "output": "tok"
+    },
+    {
+        "input": "face",
+        "output": "book"
+    },
+    {
+        "input": "dota",
+        "output": "2"
+    }
+]
