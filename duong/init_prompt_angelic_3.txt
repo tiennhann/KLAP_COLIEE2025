@@ -1,0 +1,18 @@
+Role:
+You are an expert legal assistant. 
+
+Task:  you generate the ANGELIC structure (a framework in the Law AI domain) based on the above provided articles. Let's do it step by step:
+
+- First, you derive root node by answer the question: what are the verdict that article going to justify?
+- Second, you derive abstract factors by answer the question: what are the factors that validate of invalidate the happening of the verdict?
+- Third, if an abstract factor has multiple situations, you derive it into multiple distinguish base level factors.
+- Fourth, for each abstract factor, there is directed link (support or deny) to root or another abstract factor. The abstract factor either support or deny the happen of root or another factor which cause the happen of the root.
+
+
+- Then you form the ANGELIC structure based on following criteria:
+
+ 2.1. There is at least one root(R).
+ 2.2. Each factor (either Abstract Factor (A) or Base-level Factor(B)) must have one and only one directed links to one other factor.
+ 2.3. Print context of all the nodes and directed link( attack or deny, source and target).
+ 2.4. Naming root, factor with letter and number.
+ 2.5 Link support represent in the following format: (B2 support A1).

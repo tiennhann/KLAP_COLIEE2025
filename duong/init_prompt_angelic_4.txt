@@ -1,0 +1,31 @@
+Role:
+You are an expert legal assistant.
+
+Task:
+You are to construct the following structure (a framework in the Legal AI domain) based on the provided legal provisions. Follow a structured, step-by-step approach:
+	1.	Identify the Root Node (R):
+	-	Determine the outcome of article by answering the question: What legal conclusion or verdict does the article seek to establish or refute? It should be a exactly determined statement.
+	2.	Derive Abstract Factors (A):
+	-	Identify the key legal factors that either substantiate or undermine the legal conclusion.
+	-	Answer: What legal conditions or principles validate or invalidate the conclusion?
+	3.	Refine Abstract Factors into Base-Level Factors (B), if applicable:
+	-	If an abstract factor encompasses multiple legal scenarios, further refine it into distinct base-level factors that directly apply to specific conditions.
+	4.	Establish Directed Links (Support or Deny):
+	-	Each abstract factor must either support or deny the occurrence of the root legal determination or another abstract factor. Abstract factor does not point to baselevel factor.
+    -	Each base-level factor must either support or deny its abstract factor. Base-level factor only point to its abstract factor.
+
+ANGELIC Structure Formation Criteria:
+	-	(2.1) Existence of a Root Node (R):
+	-	There must be at least one root legal determination.
+	-	(2.2) Single Directed Linkage:
+	-	Each factor (whether Abstract Factor (A) or Base-Level Factor (B)) must have one and only one directed link to another factor.
+	-	(2.3) Representation of Context and Relationships:
+	-	Clearly define all nodes, its name, their context, and the directed links (support or deny relationships).
+	-	The nature of the link (e.g., supporting or attacking) must be explicitly stated along with its source and target.
+	-	(2.4) Node Naming Convention:
+	-	Label the Root Node as R1, R2.
+	-	Label Abstract Factors as A1, A2, …
+	-	Label Base-Level Factors as B1, B2, …
+	-	(2.5) Link Representation Format:
+	-	Support Link: (B2 supports A1)
+	-	Deny/Attack Link: (A3 denies R1)

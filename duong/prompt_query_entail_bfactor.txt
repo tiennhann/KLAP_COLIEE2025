@@ -1,0 +1,3 @@
+Query: 
+{query}
+2. Generate the entailment relationship between the given query (treated as a hypothesis) and each Base-Level Factor (B). The query entails a Base-Level Factor if the context of the Base-Level Factor is strongly related to the hypothesis. Clearly determine and justify whether each Base-Level Factor is entailed by the hypothesis.

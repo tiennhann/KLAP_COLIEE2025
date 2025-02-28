@@ -1,0 +1,65 @@
+Role:
+You are an expert legal assistant. 
+
+Task:  you generate the ANGELIC structure (a framework in the Law AI domain) based on the above provided articles. Here the detail of ANGELIC structure:
+1. ANGELIC framework:
+    1.1. Has nodes as: Root (R), Abstract Factors (A), Base-Level Factors (B):
+        1.1.1. root(R) represents the the verdict of articles. It does not includes any causes or other assumption, exception.
+        1.1.2. Base-level Factors (B) are the evidence used to justify under what circumstances whether the verdict of root node happen or not.
+        1.1.3. Abstract Factors (A) are the situation used to justify under what circumstances whether the verdict of root node happen or not. Abstract is the intermediate layer between base-level factors and root. It serve the purpose that when different base-level factors consitute to one situation.
+    1.2. Directed Links:
+    - Support Link (->) : Indicates that the source node causes the target node happen. 
+    - Attack Link (>): Indicates that the source node prevents the target node happen.
+
+2. Requirement:
+ 2.1. There is at least one root(R).
+ 2.2. Each factor (either Abstract Factor (A) or Base-level Factor(B)) must have one and only one directed links to one other factor.
+ 2.3. Print context of all the nodes.
+
+
+3. Naming Conventions:
+3.1. Root Nodes: R1 for the first root, R2 for the second root (if needed), and so on.
+3.2. Abstract Factors: A1 for the first abstract factor, A2 for the second, and so forth.
+3.3. Base-Level Factors: B1 for the first base-level factor, B2 for the second, and so on.
+3.4. Link Notation: Each directed link must be explicitly denoted with a unique number.
+3.5  Represent link in the form: B2 -> R1 for B2 support R1 or B2 > R1 if B2 attack R1.
+
+
+Here is the step by step to derive Angelic structure:
+1. Derive root node (R) by asking question: What verdict the article is trying to justify?
+2. Derive abstract factors (A) by asking question: What situation that effect the justification of verdict? Abstract factors must be distinguished between each others.
+3. Derive baselevel factors (B) by asking question: What evidience that effect the justification of abstract factors or root? Base-level factors must be distinguished between each others.
+4. Derive directed links by asking questions: does the source factor support to deny(attack) the target factor?
+
+Here is an example:
+Convert articles: "Article 698\n If a manager engages in benevolent intervention in another's business in order to allow a principal to escape imminent danger to the principal's person, reputation, or property, the manager is not liable to compensate for damage resulting from this unless the manager has acted in bad faith or with gross negligence."
+
+into ANGELIC structure:
+Root R1: The manager is not liable to compensate for damage.
+Abstract factor A1: The manager exhibited gross negligence or acted in bad faith
+Abstract factor A2: The manager’s actions aimed to allow the principal to escape imminent danger
+Base-level factor B1: The manager’s intervention was benevolent
+Base-level factor B2: There were damages resulting from the intervention
+Base-level factor B3: The actions aimed to allow the escape of imminent danger to the person
+Base-level factor B4: The actions aimed to allow the escape of imminent danger to reputation
+Base-level factor B5: The actions aimed to allow the escape of imminent danger to property
+Base-level factor B6: The manager exhibited gross negligence
+Base-level factor B7: The manager acted in bad faith
+
+Directed Links:
+B2 attack R1: Factor B2 "There were damages resulting from the intervention" attack root R1 "the manager is not liable to compensate for damage". Reasoning: B2 make R1 not happen. Explain: If there were damages resulting from the intervention, the manager is liable to compensate for damage.
+B1 attack B2: Factor B1 "The manager's intervention was benevolent" attack factor B2 "there were damages resulting from the intervention". Reasoning: B1 make B2 not happen, therefore make R1 happen. Explain: The manager's intervention was benevolent therefore if there were damages resulting from the intervention, the manage is not liable to compensate for damage.
+A2 attack B2: Factor A2 "The manager's actions aimed to allow the principal to escape imminent danger" attack abstract factor B2: "there were damages resulting from the intervention". Reasoning:A2 make B2 not happen, therefore make R1 happen. Explain: The manager's actions aimed to allow the principal to escape imminent danger, therefore if there were damages resulting from the intervention, the manage is not liable to compensate for damage.
+B3 support A2: Factor B3 "The actions aimed to allow the escape of imminent danger to the person" support the realization of factor A2: "The manager’s actions aimed to allow the principal to escape imminent danger". Reasoning: B3 make A2 happen. Explain: The actions aimed to allow the escape of imminent danger to the person is the evidence to the fact that The manager’s actions aimed to allow the principal to escape imminent danger.
+B4 support A2: Factor B4 "The actions aimed to allow the escape of imminent danger to the reputation" support the realization of factor A2: "The manager’s actions aimed to allow the principal to escape imminent danger". Reasoning: B4 make A2 happen. Explain: The actions aimed to allow the escape of imminent danger to the reputation is the evidence to the fact that The manager’s actions aimed to allow the principal to escape imminent danger.
+B5 support A2: Factor B5 "The actions aimed to allow the escape of imminent danger to the property" support the realization of factor A2: "The manager’s actions aimed to allow the principal to escape imminent danger". Reasoning: B5 make A2 happen. Explain: The actions aimed to allow the escape of imminent danger to the property is the evidence to the fact that "The manager’s actions aimed to allow the principal to escape imminent danger"
+B6 support A1: Factor B6 "The manager exhibited gross negligence"  supports abstract factor A1: "The manager exhibited gross negligence or acted in bad faith". Reasoning: B6 make A1 happen. Explain: The manager exhibited gross negligence is the evidence to support the realization of the fact The manager exhibited gross negligence or acted in bad faith.
+B7 support A1: Factor B7 "The manager acted in bad faith" supports abstract factor A1: "The manager exhibited gross negligence or acted in bad faith". Reasoning: B7 make A1 happen. Explain: The manager acted in bad faith is the evidence to support the realization of the fact The manager exhibited gross negligence or acted in bad faith.
+
+
+Post-Processing Step:
+Justify the context of nodes. Think carefully by asking the question: does node represent the solely situation or evidence?
+
+After generating the ANGELIC structure, assume that the Base-Level Factors (B), Root Nodes (R), and Abstract Factors (A) are correctly identified. Carefully review and re-evaluate all links by asking question: Does factor have a attack or support link to any other factors?
+
+Notice: You don't have to print the visual of Angelic.

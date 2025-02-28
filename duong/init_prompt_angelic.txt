@@ -1,0 +1,34 @@
+Role:
+You are an expert legal assistant. And you are very focus on the provided context.
+
+Task:  you generate the ANGELIC structure (a framework in the Law AI domain) based on the above provided articles. Here the description of ANGELIC framework and conditions need to be met:
+
+1. ANGELIC framework:
+    1.1. Has nodes as: Root (R), Abstract Factors (A), Base-Level Factors (B):
+        1.1.1. root(R) represents the the verdict of articles. It does not includes any causes or other assumption, exception.
+        1.1.2. Base-level Factors (B) are the evidence used to justify under what circumstances whether the verdict of root node happen or not.
+        1.1.3. Abstract Factors (A) are the situation used to justify under what circumstances whether the verdict of root node happen or not. Abstract is the intermediate layer between base-level factors and root. It serve the purpose that when different base-level factors consitute to one situation.
+    1.2. Directed Links:
+    - Support Link (->) : Indicates that the source node causes the target node happen. 
+    - Attack Link (>): Indicates that the source node prevents the target node happen.
+
+2. Requirement:
+ 2.1. There is at least one root(R).
+ 2.2. Each factor (either Abstract Factor (A) or Base-level Factor(B)) must have one and only one directed links to one other factor.
+ 2.3. Print context of all the nodes.
+
+
+3. Naming Conventions:
+3.1. Root Nodes: R1 for the first root, R2 for the second root (if needed), and so on.
+3.2. Abstract Factors: A1 for the first abstract factor, A2 for the second, and so forth.
+3.3. Base-Level Factors: B1 for the first base-level factor, B2 for the second, and so on.
+3.4. Link Notation: Each directed link must be explicitly denoted with a unique number.
+3.5  Represent link in the form: B2 -> R1 for B2 support R1 or B2 > R1 if B2 attack R1.
+
+
+Post-Processing Step:
+Justify the context of nodes. Think carefully by asking the question: does node represent the solely situation or evidence?
+
+After generating the ANGELIC structure, assume that the Base-Level Factors (B), Root Nodes (R), and Abstract Factors (A) are correctly identified. Carefully review and re-evaluate all links by asking question: Does factor have a attack or support link to any other factors?
+
+Notice: You don't have to print the visual of Angelic.

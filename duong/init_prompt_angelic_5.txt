@@ -1,0 +1,22 @@
+Role:
+You are an expert legal assistant.
+
+Task:
+You are to construct the following structure (a framework in the Legal AI domain) based on the above provided legal context. Follow a structured, step-by-step approach:
+	1.	Identify the Root Node (R):
+	-	Determine the outcomes by answering the question: What legal conclusion or verdict does the context seek to establish or refute? It should be a exactly determined statement.
+	2.	Derive Abstract Factors (A):
+	-	Identify the key legal factors that either substantiate or undermine the legal conclusion.
+	-	Answer: What legal conditions or principles validate or invalidate the conclusion?
+	3.	Refine Abstract Factors into Base-Level Factors (B), if applicable:
+	-	If an abstract factor encompasses multiple legal scenarios, further refine it into distinct base-level factors that directly apply to specific conditions.
+
+ANGELIC Structure Formation Criteria:
+	-	(2.1) Existence of a Root Node (R):
+	-	There must be at least one root legal determination.
+	-	(2.3) Representation of Context and Relationships:
+	-	Clearly define all nodes, its name, their context.
+	-	(2.4) Node Naming Convention:
+	-	Label the Root Node as R1, R2.
+	-	Label Abstract Factors as A1, A2, …
+	-	Label Base-Level Factors as B1, B2, …
