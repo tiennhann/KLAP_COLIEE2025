@@ -5,8 +5,8 @@ from answerer import Answerer
 import dspy
 dspy.settings.configure(
     lm=dspy.LM(
-        model="ollama_chat/llama3.2",  # Changed to include provider prefix
-        api_base="http://localhost:11434",
+        model="ollama_chat/llama3.3",  # Changed to include provider prefix
+        api_base="http://localhost:11435",
         max_tokens=20000
     )
 )
@@ -18,7 +18,7 @@ with open('testing_data.json') as f:
 correct = 0
 wrong=0
 error = 0
-module = Answerer()
+module = Answerer(debug=True)
 for c in cases:
     query=c["query"]
     articles=c["paragraphs"]
@@ -33,7 +33,7 @@ for c in cases:
         correct += 1
     else:
         wrong += 1
-
+    print("true label:", expected, " - predicted label:", l)
     print(correct, "correct", wrong, "wrongs", correct + wrong, "out of", len(cases), "tested")
 
 print(correct, "/", len(cases), "with", error, "errors")

@@ -1,0 +1,53 @@
+--BEGIN TASK DEFINTION--
+Example:
+
+We have directed Links and corresponding Answer Set Programming facts:
+Below, “S” = support link, “A” = attack link.
+
+B1 -> A1 (S):
+Having an imminent danger to principal (B1) supports (helps establish) that the manager’s act was truly “benevolent intervention in imminent danger” (A1).
+ASP facts: link(support(node(bfactor(B1)),node(afactor(A1)))).
+
+
+B2 -> A1 (S):
+Showing the manager did in fact intervene benevolently (B2) likewise supports A1.
+ASP facts: link(support(node(bfactor(B2)),node(afactor(A1)))).
+
+A1 -> R1 (S):
+If it is established that the intervention was a benevolent act to avert imminent harm (A1), then that supports the conclusion that the manager is not liable (R1), per Article 698’s main rule.
+ASP facts: link(support(node(afactor(A1)),node(root(R1)))).
+
+B3 -> A2 (S):
+Proof the manager acted in bad faith or with gross negligence (B3) supports the abstract factor that the manager’s conduct was of that sort (A2).
+ASP facts: link(support(node(bfactor(B3)),node(afactor(A2)))).
+
+
+A2 -> R1 (A):
+If the manager was in bad faith or grossly negligent (A2), it attacks (negates) the manager’s non‐liability (R1). In other words, A2 defeats R1 under the statutory exception.
+ASP facts: link(attack(node(afactor(A2)),node(root(R1)))).
+
+Then, for query: 
+"In cases where an individual rescues another person from getting hit by a car by pushing that person out of the way, causing the person's luxury kimono to get dirty, the rescuer does not have to compensate damages for the kimono."
+
+we have query entail each base level factors:
+B1: Entailed
+entail(query, node(bfactor(B1))).
+
+B2: Entailed
+entail(query, node(bfactor(B2))).
+
+B3: Not entailed
+
+Therefore, in the end we have following facts:
+
+link(support(node(bfactor(B1)),node(afactor(A1)))).
+link(support(node(bfactor(B2)),node(afactor(A1)))).
+link(support(node(bfactor(B3)),node(afactor(A2)))).
+link(support(node(afactor(A1)),node(root(R1)))).
+link(attack(node(afactor(A2)),node(root(R1)))).
+
+entail(query, node(bfactor(B1))).
+entail(query, node(bfactor(B2))).
+
+After you generate the facts, think carefully and justify again the format.
+--END TASK DEFINITION-

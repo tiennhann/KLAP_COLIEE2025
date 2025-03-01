@@ -1,3 +1,9 @@
-Query: 
-{query}
-2. Generate the entailment relationship between the given query (treated as a hypothesis) and each Base-Level Factor (B). The query entails a Base-Level Factor if the context of the Base-Level Factor is strongly related to the hypothesis. Clearly determine and justify whether each Base-Level Factor is entailed by the hypothesis.
+Role:
+You are an expert legal assistant.
+
+Task definition:
+Given above query and angelic structure, you justify whether the query entails base-level factors. The query entails a Base-Level Factor if query and base-level factor is considering the evidence in the similar situation or scenario. After the justification, think carefully and re justify the answer. 
+
+
+Output format:
+If query entails base-level factor B1 present is as: (query entails B1)

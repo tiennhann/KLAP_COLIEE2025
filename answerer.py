@@ -13,18 +13,18 @@ class Answerer:
     def answer(self, article, query):
         reply = chat(article, query)
         if self.debug:
-            print("Deepseek step", reply)
+            print("======== Angelic extraction step: ======== \n", reply)
         facts = self.extractor.forward(text=reply)
         if self.debug:
-            print("Extractor step", facts)
+            print("======== ASP facts conversion step: ======= \n", facts)
         return self.reasoner.reason(facts)
 
 
 if __name__ == "__main__":
     dspy.settings.configure(
         lm=dspy.LM(
-            model="ollama_chat/llama3:8b",  # Changed to include provider prefix
-            api_base="http://localhost:11434",
+            model="ollama_chat/llama3.3",  # Changed to include provider prefix
+            api_base="http://localhost:11435",
             max_tokens=20000,
         )
     )
@@ -32,5 +32,5 @@ if __name__ == "__main__":
     with open("./test.txt", "r") as f:
         text = "".join(f.readlines())
     answerer = Answerer(debug=True)
-    answer = answerer.answer(text, "If a person under curatorship performs, without getting the consent, an act that requires  getting consent from his/her curator, the curator may ratify that act, but may not rescind that act")
+    answer = answerer.answer(text, "In cases where an individual rescues another person from getting hit by a car by pushing that person out of the way, causing the person's luxury kimono to get dirty, the rescuer does not have to compensate damages for the kimono.")
     print(answer)

@@ -1,0 +1,45 @@
+run with prompt: ./duong/init_prompt_angelic_4.txt
+run with llm: deepseek-r1:70b
+======== Generate Angelic structure and Query Entailment: ========
+ <think>
+Okay, so I'm trying to figure out whether the rescuer who pushed someone out of the way, causing their luxury kimono to get dirty, has to compensate for the damage. Let's break this down step by step using the legal framework provided.
+
+First, looking at Article 698, it talks about a manager intervening benevolently in another's business to save the principal from imminent danger. The key point here is that the manager isn't liable unless they acted in bad faith or with gross negligence. 
+
+In the query scenario, the rescuer pushed someone out of harm's way, which prevented them from being hit by a car. This action saved the person from physical harm but resulted in damage to their kimono.
+
+So, applying Article 698, the root node R1 is "The manager is not liable for damages resulting from benevolent intervention." Now, I need to identify abstract factors that support or deny this conclusion. 
+
+Abstract Factor A1 would be whether the rescuer acted in bad faith or with gross negligence because if they did, liability would apply. The opposite of that would be acting in good faith and without gross negligence, which supports non-liability.
+
+Next, refining A1 into base-level factors: B1 could be "The rescuer acted in good faith," and B2 could be "The rescuer did not act with gross negligence." Both of these support the conclusion that there's no liability.
+
+In the query, the rescuer's action was clearly to prevent harm. There's no indication of bad faith or negligence; it seems like a good Samaritan act. Therefore, the situation matches B1 and B2 because the rescuer didn't act in bad faith or with gross negligence.
+
+So, putting it all together: The query entails B1 (good faith) and B2 (no gross negligence), which in turn support A1, leading to R1 that there's no liability for the damages. Therefore, the rescuer doesn't have to compensate for the kimono.
+</think>
+
+The scenario involves a rescuer who acted in good faith without gross negligence, thereby fitting base-level factors B1 and B2.
+
+**Step-by-Step Explanation:**
+
+1. **Root Node (R):** The manager is not liable unless acting in bad faith or with gross negligence.
+
+2. **Abstract Factor (A1):** The absence of bad faith or gross negligence supports non-liability.
+
+3. **Base-Level Factors (B1 & B2):**
+   - B1: Acting in good faith.
+   - B2: No gross negligence.
+
+4. **Links:**
+   - B1 supports A1.
+   - B2 supports A1.
+   - A1 supports R.
+
+5. **Query Application:** The rescuer's actions align with B1 and B2, thus supporting non-liability under Article 698.
+
+**Answer:** (query entails B1)  
+(query entails B2)
+
+The rescuer does not have to compensate for the kimono as they acted in good faith without gross negligence.
+None

@@ -1,53 +1,38 @@
 --BEGIN TASK DEFINTION--
-Example:
+You are an expert in Answer Set Programming with Clingo solver. You will translate the given statements into Answer Set Programming facts. Here is the step by step example:
 
-We have directed Links and corresponding Answer Set Programming facts:
-Below, “S” = support link, “A” = attack link.
+-- 
+Given a statement "(A1 supports R1)":
+1. A1 will be converted into: afactor(1)
+2. R1 will be converted into:: is root(1)
+3. link type is supports will be converted into: support
+4. completed output facts: "link(support(node(afactor(1)),node(root(1))))."
 
-B1 -> A1 (S):
-Having an imminent danger to principal (B1) supports (helps establish) that the manager’s act was truly “benevolent intervention in imminent danger” (A1).
-ASP facts: link(support(node(bfactor(B1)),node(afactor(A1)))).
+Notice:
+if A1 then afactor(1).
+if B1 then bfactor(1).
+if R1 then root(1).
+if link type denies then will be converted into: attack
 
+-- 
 
-B2 -> A1 (S):
-Showing the manager did in fact intervene benevolently (B2) likewise supports A1.
-ASP facts: link(support(node(bfactor(B2)),node(afactor(A1)))).
+Given a statement "(query entails B1)":
+1. B1 will be convert into bfactor(1)
+2. completed output facts: entail(query, node(bfactor(1))).
+-- 
+Here is more examples:
 
-A1 -> R1 (S):
-If it is established that the intervention was a benevolent act to avert imminent harm (A1), then that supports the conclusion that the manager is not liable (R1), per Article 698’s main rule.
-ASP facts: link(support(node(afactor(A1)),node(root(R1)))).
+Input: (A1 support R1)
+Output: link(support(node(afactor(1)),node(root(1)))).
 
-B3 -> A2 (S):
-Proof the manager acted in bad faith or with gross negligence (B3) supports the abstract factor that the manager’s conduct was of that sort (A2).
-ASP facts: link(support(node(bfactor(B3)),node(afactor(A2)))).
+Input: (A2 denies R1)
+Output: link(attack(node(afactor(2)),node(root(1)))).
 
+Input: (B3 supports A2)
+Output: link(support(node(bfactor(3)),node(afactor(2)))).
 
-A2 -> R1 (A):
-If the manager was in bad faith or grossly negligent (A2), it attacks (negates) the manager’s non‐liability (R1). In other words, A2 defeats R1 under the statutory exception.
-ASP facts: link(attack(node(afactor(A2)),node(root(R1)))).
-
-Then, for query: 
-"In cases where an individual rescues another person from getting hit by a car by pushing that person out of the way, causing the person's luxury kimono to get dirty, the rescuer does not have to compensate damages for the kimono."
-
-we have query entail each base level factors:
-B1: Entailed
-entail(query, node(bfactor(B1))).
-
-B2: Entailed
-entail(query, node(bfactor(B2))).
-
-B3: Not entailed
-
-Therefore, in the end we have following facts:
-
-link(support(node(bfactor(B1)),node(afactor(A1)))).
-link(support(node(bfactor(B2)),node(afactor(A1)))).
-link(support(node(bfactor(B3)),node(afactor(A2)))).
-link(support(node(afactor(A1)),node(root(R1)))).
-link(attack(node(afactor(A2)),node(root(R1)))).
-
-entail(query, node(bfactor(B1))).
-entail(query, node(bfactor(B2))).
+Input: (query entails B3)
+Output: entail(query, node(bfactor(3))).
 
 After you generate the facts, think carefully and justify again the format.
 --END TASK DEFINITION-
