@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 class MDATask(dspy.Signature):
     """Signature for converting legal text to an ADF structure"""
     task_definition = dspy.InputField(desc="The definition for the task.")
+    failed= dspy.InputField(desc="Whether or not a previous attempt of the task failed. The failed answer will be included.")
+    failed_answer= dspy.InputField(desc="The failed answer")
     input_text = dspy.InputField(
         desc="The input text from which to extract the MDA structure."
     )
@@ -22,8 +24,12 @@ class MDAExtractor(dspy.Module):
         with file_path.open("r") as file:
             self.task_definition = "".join(file.readlines())
 
-    def forward(self, text):
-        converted = self.task(input_text=text, task_definition=self.task_definition)
+    def forward(self, text, failed_answer=None):
+        failed = False
+        if failed_answer == "" or failed_answer == None:
+            failed = True
+
+        converted = self.task(input_text=text, task_definition=self.task_definition, failed=failed, failed_answer=failed_answer)
         atoms = converted.answer
         for i in range(len(atoms)):
             atom = atoms[i]

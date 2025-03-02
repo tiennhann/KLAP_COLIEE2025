@@ -3,6 +3,9 @@ from minh.deepseek import chat
 from reasoner.reasoner import Reasoner
 import dspy
 
+class ExtractorException(Exception):
+    def __inint__(self, reply):
+        super.__init__(reply)
 
 class Answerer:
     def __init__(self, debug=False):
@@ -18,6 +21,32 @@ class Answerer:
         if self.debug:
             print("======== ASP facts conversion step: ======= \n", facts)
         return self.reasoner.reason(facts)
+    
+    def retry_extractor(self, article, query, failed_answer):
+        reply = chat(article, query, "")
+        if self.debug:
+            print("======== Angelic extraction step: ======== \n", reply)
+        facts = self.extractor.forward(text=reply, failed_answer=failed_answer)
+        if self.debug:
+            print("======== ASP facts conversion step: ======= \n", facts)
+        try:
+            answer = self.reasoner.reason(facts)
+            return reply, facts, answer 
+        except Exception as e:
+            raise ExtractorException(facts)
+
+    def retry_chat(self, article, query, failed_answer):
+        reply = chat(article, query, failed_answer)
+        if self.debug:
+            print("======== Angelic extraction step: ======== \n", reply)
+        facts = self.extractor.forward(text=reply, failed_answer=None)
+        if self.debug:
+            print("======== ASP facts conversion step: ======= \n", facts)
+        try:
+            answer = self.reasoner.reason(facts)
+            return reply, answer 
+        except Exception as e:
+            raise ExtractorException(reply)
 
 
 if __name__ == "__main__":
