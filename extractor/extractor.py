@@ -26,7 +26,7 @@ class MDAExtractor(dspy.Module):
 
     def forward(self, text, failed_answer=None):
         failed = False
-        if failed_answer == "" or failed_answer == None:
+        if failed_answer != "" and failed_answer != None:
             failed = True
 
         converted = self.task(input_text=text, task_definition=self.task_definition, failed=failed, failed_answer=failed_answer)
