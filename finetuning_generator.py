@@ -10,27 +10,25 @@ dspy.settings.configure(
         max_tokens=20000
     )
 )
+import logging
+
+logging.getLogger("requests").setLevel(logging.CRITICAL)
 
 cases = []
-with open('testing_data.json') as f:
+with open('train_as_test.json') as f:
     cases = json.load(f)
 
-module = Answerer(debug=False)
+module = Answerer()
 print("Generate finetuning data for extractor...")
 data = []
-data_count = 0
-for i, c in enumerate(cases):
+data_count = 2
+for i, c in enumerate(cases[11:]):
     query=c["query"]
     articles=c["paragraphs"]
     expected=c["label"]
 
-    failed_answer = ""
-    count = 20
+    failed_answer = None
     while True:
-        if count < 0:
-            print("ignore this case, failed to many times")
-            break
-        count -= 1
         try:
             chat, extracted, l= module.retry_extractor(article=articles, query=query, failed_answer=failed_answer)
             l = "Y" if l else "N"
@@ -40,15 +38,16 @@ for i, c in enumerate(cases):
                 break
             else:
                 print("retrying... wrong answer")
-                failed_answer = extracted
+                failed_answer = f"The following answer failed because it did not give the right result: {extracted}"
                 continue
         except ExtractorException as e:
             print("retrying...  failed")
-            failed_answer = e.args[0]
+            failed_answer = f"The following answer failed because it's not the right Clingo syntax: {e.args[0]}"
             continue
-        except:
-            raise
-    if len(data) == 10: 
+        except Exception as e:
+            print(e)
+            continue
+    if len(data) == 5: 
         with open(f"finetuning_extractor_data_{data_count}.json", "w") as f:
             f.writelines(json.dumps(data))
         data_count+= 1
@@ -58,39 +57,39 @@ if len(data) > 0:
         f.writelines(json.dumps(data))
 print("Done extractor...")
 
-print("Generate finetuning data for chat...")
-data = []
-data_count = 0
-for i, c in enumerate(cases):
-    query=c["query"]
-    articles=c["paragraphs"]
-    expected=c["label"]
+# print("Generate finetuning data for chat...")
+# data = []
+# data_count = 0
+# for i, c in enumerate(cases):
+#     query=c["query"]
+#     articles=c["paragraphs"]
+#     expected=c["label"]
 
-    failed_answer = ""
-    while True:
-        try:
-            chat, l= module.retry_chat(article=articles, query=query, failed_answer=failed_answer)
-            l = "Y" if l else "N"
-            if l == expected:
-                data.append({"query": query, "articles": articles, "chat": chat})
-                print("Generated for case", i)
-                break
-            else:
-                print("retrying... wrong answer")
-                failed_answer = chat 
-                continue
-        except ExtractorException as e:
-            print("retrying...  failed")
-            failed_answer = e.args[0]
-            continue
-        except:
-            raise
-    if len(data) == 10: 
-        with open(f"finetuning_chat_data_{data_count}.json", "w") as f:
-            f.writelines(json.dumps(data))
-        data_count+= 1
-        data = []
-if len(data) > 0:
-    with open(f"finetuning_chat_data_{data_count}.json", "w") as f:
-        f.writelines(json.dumps(data))
-print("Done chat...")
+#     failed_answer = ""
+#     while True:
+#         try:
+#             chat, l= module.retry_chat(article=articles, query=query, failed_answer=failed_answer)
+#             l = "Y" if l else "N"
+#             if l == expected:
+#                 data.append({"query": query, "articles": articles, "chat": chat})
+#                 print("Generated for case", i)
+#                 break
+#             else:
+#                 print("retrying... wrong answer")
+#                 failed_answer = chat 
+#                 continue
+#         except ExtractorException as e:
+#             print("retrying...  failed")
+#             failed_answer = e.args[0]
+#             continue
+#         except:
+#             raise
+#     if len(data) == 10: 
+#         with open(f"finetuning_chat_data_{data_count}.json", "w") as f:
+#             f.writelines(json.dumps(data))
+#         data_count+= 1
+#         data = []
+# if len(data) > 0:
+#     with open(f"finetuning_chat_data_{data_count}.json", "w") as f:
+#         f.writelines(json.dumps(data))
+# print("Done chat...")

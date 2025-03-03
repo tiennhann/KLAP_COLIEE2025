@@ -4,8 +4,8 @@ from reasoner.reasoner import Reasoner
 import dspy
 
 class ExtractorException(Exception):
-    def __inint__(self, reply):
-        super.__init__(reply)
+    def __inint__(self, reply, explanation=None):
+        super.__init__(reply, explanation)
 
 class Answerer:
     def __init__(self, debug=False):
@@ -33,7 +33,7 @@ class Answerer:
             answer = self.reasoner.reason(facts)
             return reply, facts, answer 
         except Exception as e:
-            raise ExtractorException(facts)
+            raise ExtractorException(facts, str(e))
 
     def retry_chat(self, article, query, failed_answer):
         reply = chat(article, query, failed_answer)

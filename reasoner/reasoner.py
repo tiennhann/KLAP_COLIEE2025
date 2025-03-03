@@ -9,12 +9,12 @@ class Reasoner:
             self.theory = "".join(file.readlines())
     
     def reason(self, facts) -> bool:
-        ctl = clingo.Control()
+        ctl = clingo.Control(logger=self.log)
         grounding_parts = [("theory", []), ("facts",[])]
 
         ctl.add("theory", [], self.theory) 
         ctl.add("facts", [], facts) 
-        ctl.ground(grounding_parts, context=Context())
+        ctl.ground(grounding_parts)
         handle = ctl.solve(yield_=True)
         for m in handle:
             symbols = m.symbols(atoms=True)
@@ -22,13 +22,10 @@ class Reasoner:
                 if str(sym).lower() == "yes":
                     return True 
         return False 
+    
+    def log(self, x, y):
+        pass
         
-class Context:
-     def id(self, x):
-         return x
-     def seq(self, x, y):
-         return [x, y]
-
 if __name__ == "__main__":
     reasoner = Reasoner()
     facts = ""
