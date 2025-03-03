@@ -2,13 +2,13 @@ from ollama import Client
 
 prompt = ""
 prompt_path = "./duong/init_prompt_angelic_4.txt"
-model="llama3.2"
+model="llama3.3"
 with open(f"{prompt_path}", "r") as f:
     prompt = "".join(f.readlines())
     
 def chat(article, query, failed_response=""):
     # Create a client that connects to the Ollama server running on localhost.
-    client = Client(host='http://localhost:11434')
+    client = Client(host='http://localhost:11435')
     # print("run with prompt:", prompt_path)
     # print("run with llm:", model)
     # Initialize an empty conversation history list

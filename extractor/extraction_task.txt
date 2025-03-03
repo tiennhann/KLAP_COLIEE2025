@@ -20,6 +20,11 @@ Given a statement "(query entails B1)":
 1. B1 will be convert into bfactor(1)
 2. completed output facts: entail(query, node(bfactor(1))).
 -- 
+
+Given a statement "(query agree R1)":
+1. R1 will convert into root(1)
+2. completed output facts: agree(query, node(root(1))).
+--
 Here is more examples:
 
 Input: (A1 support R1)
@@ -33,6 +38,9 @@ Output: link(support(node(bfactor(3)),node(afactor(2)))).
 
 Input: (query entails B3)
 Output: entail(query, node(bfactor(3))).
+
+Input: (query agree R1)
+Output: agree(query, node(root(1))).
 
 After you generate the facts, think carefully and justify again the format.
 --END TASK DEFINITION-

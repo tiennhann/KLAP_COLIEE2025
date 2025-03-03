@@ -8,7 +8,8 @@ attack(node(X), node(Y)) :- link(attack(node(X), node(Y))), node(X).
 node(Y) :- support(_, node(Y)), not attack(_,node(Y)).
 
 % predict label
-yes :- node(root(X)).
+yes :- node(root(X)), agree(query, node(root(X))).
+yes :- - node(root(X)), - agree(query, node(root(X))).
 no :- not yes.
 
 #show yes/0.

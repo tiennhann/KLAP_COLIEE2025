@@ -1,7 +1,7 @@
 import json
 
 from answerer import Answerer
-
+import random
 import dspy
 dspy.settings.configure(
     lm=dspy.LM(
@@ -12,8 +12,10 @@ dspy.settings.configure(
 )
 
 cases = []
-with open('testing_data.json') as f:
+with open('train_as_test.json') as f:
     cases = json.load(f)
+
+cases = random.sample(cases, 100)
 
 correct = 0
 wrong=0

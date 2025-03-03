@@ -30,8 +30,10 @@ ANGELIC Structure Formation Criteria:
 	-	Support Link: (B2 supports A1)
 	-	Deny/Attack Link: (A3 denies R1)
 
-Then, given above query and angelic structure, you justify whether the query entails base-level factors. The query entails a Base-Level Factor if query and base-level factor is considering the evidence in the similar situation or scenario. After the justification, think carefully and re justify the answer. 
+Then, given above query and angelic structure, you justify whether the query entails base-level factors. The query entails a Base-Level Factor if query and base-level factor is considering the evidence in the similar situation or scenario. Then you justify whether the query and root agree or disagree the same verdict in the comparable situation. If there are multiple roots, you only justify the most comparable one. After the justification, think carefully and re justify the answer. 
 
 
 Output format:
-If query entails base-level factor B1 present is as: (query entails B1)
+- If query entails base-level factor B1 present is as: (query entails B1).
+- If query agree with root R1 presenting as: (query agree R1).
+- If query disgree with root R1 presenting as: (query disagree R1).
