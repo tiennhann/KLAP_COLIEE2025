@@ -1,7 +1,7 @@
 import json
 import re
 from answerer import Answerer
-from minh.deepseek import chat
+from minh.deepseek_pure_prompt import chat
 #from budget_forcing_dif import chat
 import random
 from turtle import pd
