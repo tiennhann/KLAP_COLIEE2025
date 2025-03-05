@@ -12,15 +12,16 @@ dspy.settings.configure(
 )
 
 cases = []
-with open('train_as_test.json') as f:
+with open('all_ins_article_698.json') as f:
     cases = json.load(f)
 
-cases = random.sample(cases, 100)
+# cases = random.sample(cases, 100)
 
 correct = 0
 wrong=0
 error = 0
 module = Answerer(debug=True)
+
 for c in cases:
     query=c["query"]
     articles=c["paragraphs"]

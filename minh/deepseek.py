@@ -1,12 +1,14 @@
 from ollama import Client
 
 prompt = ""
-prompt_path = "./duong/init_prompt_angelic_4.txt"
+prompt_path = "./duong/init_prompt_angelic_4.1.txt"
 model="llama3.3"
+
 with open(f"{prompt_path}", "r") as f:
     prompt = "".join(f.readlines())
-    
+
 def chat(article, query, failed_response=""):
+
     # Create a client that connects to the Ollama server running on localhost.
     client = Client(host='http://localhost:11435')
     # print("run with prompt:", prompt_path)
@@ -16,13 +18,14 @@ def chat(article, query, failed_response=""):
 
     failed_message = ""
     if failed_response != "":
-        failed_message = f"Retry the above task again. The following that you gave me wasn't a correct answer: {failed_response}"
+        failed_message = f"Reconstruct the structure again. The one following haves incorrect directed links: {failed_response}"
 
     user_input = f"""
     Articles: {article} \n
     Query: {query}
-    {prompt}
     {failed_message}
+    {prompt}
+    
     """
     # Append the user's message to the conversation history
     conversation.append({'role': 'user', 'content': user_input})

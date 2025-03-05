@@ -1,0 +1,46 @@
+Role:
+You are an expert legal assistant.
+
+Task:
+You are to construct the following structure (a framework in the Legal AI domain) based on the provided legal provisions. Follow a structured, step-by-step approach:
+	1.	Identify the Root Node (R):
+	-	Determine the outcome of article by answering the question: What legal conclusion or verdict does the article seek to establish or refute? It should be a fully determined statement.
+	2.	Derive Abstract Factors (A):
+	-	Identify the key legal factors that either substantiate or undermine the legal conclusion.
+	-	Answer: What legal conditions or principles validate or invalidate the conclusion?
+	3.	Create Base-Level Factors (B) (child) from Abstract Factors (A) (parent) and direct links from child to parent:
+•	-   If an abstract factor covers multiple legal scenarios, create base-level factors specifying conditions.
+    -   If an abstract factor covers only one scenario, its base-level factor mirrors it.
+    -   Each base-level factor must have a support link to its abstract parent.
+	4.	Establish Directed Links (Support or Deny) of Abstract Factor:
+	-	Each abstract factor must either support or deny the root determination or another abstract factor. Abstract factors do not point to base-level factors. Abstract factor does not point to baselevel factor.
+    -   Explain Support, Deny Direct Links:
+        -   Support Direct Links from abstract factor to root means that Abstract factor validate the verdict(root) leading to a True verdict (i.e., it supports the legal conclusion).
+        -   Deny Direct Links from abstract factor to root means that Abstract factor invalidate the verdict(root) leading to a False verdict (i.e., it supports the legal conclusion).
+        -   Deny Direct Links from one abstract factor to another abstract factor means that source Abstract factor negates the effect of directed link from target to root. For example, if abstract factor A1 denies abstract factor A2, and A2 supports the root R1, then even if A2 would otherwise validate R1, the verdict remains False because A1 negates the support effect of A2 on R1.
+
+
+  
+ANGELIC Structure Formation Criteria:
+	-	(2.1) Existence of a Root Node (R):
+	-	There must be at least one root legal determination.
+	-	(2.2) Single Directed Linkage:
+	-	Each factor (whether Abstract Factor (A) or Base-Level Factor (B)) must have one and only one directed link to another factor.
+	-	(2.3) Representation of Context and Relationships:
+	-	Clearly define all nodes, its name, their context, and the directed links (support or deny relationships).
+	-	The nature of the link (e.g., supporting or attacking) must be explicitly stated along with its source and target.
+	-	(2.4) Node Naming Convention:
+	-	Label the Root Node as R1, R2.
+	-	Label Abstract Factors as A1, A2, …
+	-	Label Base-Level Factors as B1, B2, …
+	-	(2.5) Link Representation Format:
+	-	Support Link: (B2 supports A1)
+	-	Deny/Attack Link: (A3 denies R1)
+
+Then, given above query and angelic structure, you justify whether the query entails base-level factors. The query entails a Base-Level Factor if query and base-level factor is considering the evidence in the similar situation or scenario. Then you justify whether the query and root agree or disagree the same verdict in the comparable situation. If there are multiple roots, you only justify the most comparable one. After the justification, think carefully and re justify the answer. 
+
+
+Output format:
+- If query entails base-level factor B1 present is as: (query entails B1).
+- If query agree with root R1 presenting as: (query agree R1).
+- If query disgree with root R1 presenting as: (query disagree R1).
