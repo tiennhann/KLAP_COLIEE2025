@@ -17,10 +17,13 @@ class MDATask(dspy.Signature):
 
 
 class MDAExtractor(dspy.Module):
-    def __init__(self):
+    def __init__(self, file_path_input = ""):
         super().__init__()
         self.task = dspy.ChainOfThought(MDATask)
-        file_path = Path(__file__).parent / "extraction_task.txt"
+        if file_path_input == "":
+            file_path = Path(__file__).parent / "extraction_task.txt"
+        else: file_path = Path(__file__).parent / file_path_input
+        print("extraction prompt are using:", file_path)
         with file_path.open("r") as file:
             self.task_definition = "".join(file.readlines())
 

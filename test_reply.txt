@@ -1,41 +1,36 @@
 ======== Generate Angelic structure and Query Entailment: ========
- To construct the ANGELIC structure based on the provided legal provisions and then analyze the given query, we follow a step-by-step approach.
+ Given the provided legal article context and the query:
 
-### Step 1: Identify the Root Node (R)
-The article seeks to establish that if a manager engages in benevolent intervention to help another person avoid imminent danger without acting in bad faith or with gross negligence, the manager is not liable for compensation for any resulting damage. Thus, the root node can be defined as:
-- **R1**: A manager is not liable for damages when intervening benevolently without bad faith or gross negligence.
+**Rule(s)**:
+The manager is not liable to compensate for damage resulting from benevolent intervention in another's business unless the manager has acted in bad faith or with gross negligence.
 
-### Step 2: Derive Abstract Factors (A)
-The key legal factors that validate this conclusion include:
-- **A1**: The intervention was made to prevent imminent danger.
-- **A2**: The intervention was done in good faith and without gross negligence.
+**Condition(s)**:
+* Condition 1: The manager engages in benevolent intervention in another's business.
+* Condition 2: The intervention is to allow a principal to escape imminent danger to the principal's person, reputation, or property.
 
-### Step 3: Refine Abstract Factors into Base-Level Factors (B), if applicable
-Refining the abstract factors, we have:
-- **B1** (under A1): The danger was to the person's property.
-- **B2** (under A1): The danger was imminent and could not be avoided by other means.
-- **B3** (under A2): The intervenor did not act with gross negligence.
+**Legal Consequence(s)**:
+The manager is not liable to compensate for damage resulting from this intervention unless an exception applies.
 
-### Step 4: Establish Directed Links
-Given that each factor must have a directed link to another, we establish:
-- **(A1 supports R1)**: Intervening to prevent danger supports the conclusion of no liability.
-- **(A2 supports R1)**: Acting in good faith and without gross negligence supports the conclusion of no liability.
-- **(B1 supports A1)**: Danger to property is a form of imminent danger.
-- **(B2 supports A1)**: Imminence and lack of alternative actions justify intervention.
-- **(B3 supports A2)**: Absence of gross negligence is part of acting in good faith.
+**Exception(s)**:
+* Exception 1: The manager has acted in bad faith.
+* Exception 2: The manager has acted with gross negligence.
 
-### Justification
-Given the query about a person rescuing another from being hit by a car, thereby causing damage to a luxury kimono, we analyze:
-- The scenario involves an imminent danger to the person (not property directly), suggesting it aligns closely with **B2**.
-- There's no indication of bad faith or gross negligence, implying alignment with **A2** and specifically **B3**.
+Given the query:
+"When A was on a long-term business trip and was absent, a part of a hedge of A's house collapsed due to a strong wind. Afterward, B who has a house on a land next to A's house performed an act for A without any obligation. If B started repair of the hedge by him/herself but the hedge has all withered because B left it in the middle of the repair, A may not claim the damage of the withered hedge."
 
-Thus, **(query entails B2)** because both involve preventing imminent physical harm. Additionally, since there's an assumption of good intentions in the query (rescuing someone), it aligns with **(query entails B3)**.
+1. Identify the Plaintiff and Defendant, what the conclusion on defendant of query?
+   - Plaintiff: A
+   - Defendant: B
+   - Conclusion on Defendant (B): Not liable for the damage of the withered hedge.
 
-### Agreement with Root Node
-Considering **R1**, which states a manager (or anyone intervening) is not liable for damages if acting without bad faith or gross negligence to prevent imminent danger, and comparing this to the query where an individual rescues another from harm:
-- The query involves a benevolent act aimed at preventing physical harm, suggesting no liability should be incurred by the rescuer for the damage caused (the dirty kimono), given the context of the provided article.
+2. Is that defendant's conclusion in the query the same as or opposite to the legal consequence(outcome) stated in the article?
+   - (Query, Outcome, Yes)
 
-Therefore, **(query agree R1)** because both scenarios conclude that the intervenor is not liable for damages resulting from their actions under similar conditions of benevolence and absence of negligence or bad faith.
+3. Justify if the defendant in the query meet each condition in the Conditions section of articles.
+   - (Query, Condition 1, Yes): B performed an act for A without obligation, which can be seen as benevolent intervention.
+   - (Query, Condition 2, No): There's no clear indication that B's action was to save A from imminent danger to person, reputation, or property; the context suggests it was due to a strong wind causing damage to a hedge.
 
-After re-justification, considering the specific details and applying them to the ANGELIC structure, it's clear that the query aligns with the principles established in Article 698 regarding liability for damage caused during a benevolent intervention. The act described in the query directly relates to preventing imminent danger (supporting **B2** and by extension **A1**) and assumes good faith without gross negligence (supporting **B3** and thus **A2**), leading to the conclusion that there should be no liability for the damages incurred, aligning with **R1**.
+4. Does the defendant in the query have any exception from Exception section?:
+   - (Query, Exception 1, No): There is no evidence B acted in bad faith.
+   - (Query, Exception 2, Yes): The fact that B left the repair in the middle, leading to the hedge withering, could be interpreted as gross negligence.
 None

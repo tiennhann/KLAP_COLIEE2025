@@ -3,8 +3,12 @@ import clingo
 from pathlib import Path
 
 class Reasoner: 
-    def __init__(self):
-        file_path = Path(__file__).parent / "theory_2.lp"
+    def __init__(self, theory_name=""):
+        if theory_name == "":
+            file_path = Path(__file__).parent / "theory_4.lp"
+        else:
+            file_path = Path(__file__).parent / theory_name
+        print("use theory:", file_path)
         with file_path.open("r") as file:
             self.theory = "".join(file.readlines())
     

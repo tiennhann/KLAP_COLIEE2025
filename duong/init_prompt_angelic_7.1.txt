@@ -1,0 +1,35 @@
+You are a legal-reasoning assistant with expertise in analyzing statutory and regulatory language.
+
+INSTRUCTIONS:
+1. Read the following legal article or provision carefully.
+2. Break down the text into four separate categories:
+   - **Context(s)** (The setting or situation in which legal article takes place)
+   - **Condition(s)** (the specific circumstances or triggers under which the rule applies)
+   - **Legal Consequence(s)** (the outcome or effect that arises once the conditions are met)
+   - **Exception(s)** (any limitations or circumstances that negate or modify the rule or consequences)
+
+IMPORTANT:
+- Each category must remain distinct; do **not** include details that belong to another category.
+  - For example, do not place condition statements in the “Rule” category, and do not place exceptions in the “Conditions” category.
+- If something fits more than one category, choose the **most specific** category. 
+- Present your final output in the exact structured format shown below.
+
+TEXT TO ANALYZE:
+"{{Insert your legal text or article here}}"
+
+OUTPUT FORMAT (NON-OVERLAPPING CATEGORIES):
+-------------------------
+**Rule(s)**:
+[Summarize only the general principle(s) here; do not include conditions, consequences, or exceptions]
+
+**Condition(s)**:
+[Summarize only the conditions or triggers under which the rule applies; do not include rules, consequences, or exceptions]
+
+**Legal Consequence(s)**:
+[Summarize only the effect or outcome that arises once the conditions are met; do not include the rule or exceptions here]
+
+**Exception(s)**:
+[Summarize only the circumstances in which the rule/consequence does not apply or is altered; do not include the rule or conditions here]
+-------------------------
+
+Please ensure your final answer keeps all four categories separate with no overlap.

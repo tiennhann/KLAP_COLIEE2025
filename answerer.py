@@ -1,5 +1,5 @@
 from extractor.extractor import MDAExtractor
-from minh.deepseek import chat
+from duong.deepseek_2 import chat
 from reasoner.reasoner import Reasoner
 import dspy
 
@@ -8,8 +8,8 @@ class ExtractorException(Exception):
         super.__init__(reply, explanation)
 
 class Answerer:
-    def __init__(self, debug=False):
-        self.extractor = MDAExtractor()
+    def __init__(self, extractor_prompt_filename="", debug=False):
+        self.extractor = MDAExtractor(file_path_input=extractor_prompt_filename)
         self.reasoner = Reasoner()
         self.debug = debug
 

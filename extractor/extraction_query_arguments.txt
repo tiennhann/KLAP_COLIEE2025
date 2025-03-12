@@ -1,0 +1,25 @@
+--BEGIN TASK DEFINTION--
+You are an expert in Answer Set Programming with Clingo solver. You will translate the given statements into Answer Set Programming facts.
+
+-- 
+
+--
+Here is  examples:
+
+Input: (Query, Outcome, Yes)
+Output: query_outcome(1).
+
+Input: (Query, Outcome, No)
+Output: query_outcome(0).
+
+Input: (Query, Condition 1, Yes)
+Output: query_condition(1, 1).
+
+Input: (Query, Condition 2, No)
+Output: query_condition(2, 0).
+
+Input: (Query, Exception 1, No)
+Output: query_exception(1, 0).
+
+After you generate the facts, think carefully and justify again the format.
+--END TASK DEFINITION-
