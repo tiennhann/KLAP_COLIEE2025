@@ -1,0 +1,19 @@
+Task 1:
+Determine whether the query is logically entailed by the given articles. If the sentence logically follows from the information, respond with "(Query True)". If it does not logically follow, respond with "(Query False)". Identifying what relevant factors within the query, Answer (Query Valid) if query explicitly expresses the juridical acts(or obligations) are legally valid, or answer (Query Invalid) if query explicitly expresses the juridical acts(or obligations) are legally invalid.
+
+Example 1: Information: 
+Article 87:
+(1) If the owner of a first thing attaches a second thing that the owner owns to the first thing to serve the ordinary use of the first thing, the thing that the owner attaches is an appurtenance. 
+(2) An appurtenance is disposed of together with the principal thing if the principal thing is disposed of.
+
+Sentence: Extended parts of the building shall be regarded as appurtenance.
+
+Expected Answer: (Query False)
+
+Example 2: Information: 
+Article 300:
+(1) The exercise of a right of retention does not preclude the running of extinctive prescription of claims.
+
+Sentence: Even while the holder of a right to retention continues the possession of the retained property, extinctive prescription runs for its secured claim.
+
+Expected Answer: (Query True)

@@ -4,14 +4,11 @@ You are an expert in Answer Set Programming with Clingo solver. You will transla
 -- 
 Given a statement "(A1 supports R1)":
 1. A1 will be converted into: afactor(1)
-2. R1 will be converted into:: is root(1)
-3. link type is supports will be converted into: support
+2. R1 will be converted into: root(1)
+3. link type is 'supports' will be converted into: support. if link type 'denies' then will be converted into: attack
 4. completed output facts: "link(support(node(afactor(1)),node(root(1))))."
 
-Notice:
-if A1 then afactor(1).
-if B1 then bfactor(1).
-if R1 then root(1).
+
 if link type denies then will be converted into: attack
 
 -- 
@@ -42,5 +39,5 @@ Output: entail(query, node(bfactor(3))).
 Input: (query agree R1)
 Output: agree(query, node(root(1))).
 
-After you generate the facts, think carefully and justify again the format.
+After you generate the facts, think carefully and justify again the format. Each facts represent in one line. There is no ',' between each fact.
 --END TASK DEFINITION-

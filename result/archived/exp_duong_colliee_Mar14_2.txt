@@ -1,0 +1,138 @@
+extraction prompt are using: /home/anguyen/KLAP_COLIEE2025/extractor/extraction_query_arguments.txt
+use theory: /home/anguyen/KLAP_COLIEE2025/reasoner/theory_4.lp
+article: (Timing of Entry into Effect of Manifestations of Intention)
+Article 97 (1) A manifestation of intention becomes effective at the time notice thereof reaches the other party.
+query: A manifestation of intention to a person at a distance will not be effective until the other party recognizes it.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: (Conflict between Statutory Liens and Pledges on Movables)
+Article 334 If there is conflict between a statutory lien and a pledge on movables, the pledgee of those movables has the same rights as those of the holder of a statutory lien of the first rank under Article 330.
+(Order of Priority of Statutory Liens over Movables)
+Article 330 (1) If there are competing special statutory liens against the same movables, the order of priority follows the order set forth below.In this case, if there are two or more preservers with respect to the statutory liens for preservation of movables set forth in item (ii), a new preserver has priority over previous preservers:
+(i) statutory liens for leases of immovables, lodging at hotels and transportation;
+(ii) statutory liens for the preservation of movables; and
+(iii) statutory liens for the sale of movables, the supply of seeds and seedlings or fertilizer, agricultural labor and industrial labor.
+(2) In the cases referred to in the preceding paragraph, if a holder of a statutory lien ranked first knew at the time of acquiring the relevant claim of the existence of a holder of a statutory lien of the second or third rank, that holder may not exercise the relevant rights of priority against those persons. The same applies to the exercise against persons that have preserved things on behalf of the holder of a statutory lien of the first rank.
+query: A sold Mechanical Tool X, owned by A, to B and delivered X to B. Then B created a pledge on X for the benefit of C and completed the delivery, and as of the time when C acquired the pledge, C did not know that A had a statutory lien. In this case, the pledge for C shall have priority over the statutory lien for A.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 545 (1) If one of the parties exercises the right to cancel, each party assumes an obligation to restore the other party to that other party's original state; provided, however, that this may not prejudice the rights of a third party.
+(2) In the case referred to in the main clause of the preceding paragraph, if any monies are to be refunded, interest must accrue from the time of the receipt of those monies.
+(3) In the case referred to in the main clause of paragraph (1), if a thing other than money is to be returned, fruits that have accrued on or after the time of the receipt of the thing must also be returned.
+(4) The exercise of the right to cancel does not preclude claims for compensation for loss or damage.
+query: In restoring to the original state when the right to cancel has been exercised, if a thing other than money is to be returned, fruits that have accrued on or after the time of the receipt of the thing must also be returned.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 327
+(1) Statutory lien for construction work for immovables exists, with respect to immovables, in connection with the expenses of construction work performed by a person that designs, constructs or supervises construction regarding the immovables of the obligor.
+(2) The statutory liens referred to in the preceding paragraph exist with respect to the relevant increased value alone, but only if there is a current increase in the value of the immovables resulting from the construction work.
+query: Provisions for statutory liens for real property construction are established in the Civil Code.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 577
+(1) If a mortgage that does not conform to the terms of the contract is registered on immovables that have been purchased, the buyer may refuse to pay the price until the completion of the procedures of the claim for extinguishment of the mortgage. In such cases, the seller may demand that the buyer file the claim for extinguishment of the mortgage without delay.
+(2) The provisions of the preceding paragraph apply mutatis mutandis if a statutory lien or pledge that does not conform to the terms of the contract is registered on the immovables that have been bought.
+query: If any mortgage, statutory lien or pledge is registered on immovable property that has been purchased, the buyer may refuse to pay the purchase money until the completion of the procedures of the claim for extinguishment of the morgage, the statutory lien or the pledge.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 597
+(1) If the parties specify a period of a loan for use, the loan for use is terminated upon the expiration of the period.
+(2) If the parties do not specify a period of a loan for use, but they specify the purpose of using and making profit from the borrowed thing, the loan for use is terminated when the borrower finishes using and making profit from the thing in line with the purpose.
+(3) A loan for use is terminated upon the death of the borrower.
+query: Loans for use shall lose its effect on the death of the lender by operation of law.
+Leases shall not lose its effect on the death of the lessor by operation of law.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 265 A superficiary has the right to use another person's land in order to own structures, or trees or bamboo, on that land.
+query: Superficies are the rights to use a land in order to own structures, or trees or bamboo.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 613
+(1) If a lessee lawfully subleases a leased thing, the sublessee is liable to perform an obligation based on the sublease directly to the lessor, to the extent of the scope of the lessee's obligation based on the lease between the lessor and the lessee. In such a case, advance payment of rent may not be duly asserted against the lessor.
+(2) The provisions of the preceding paragraph do not preclude the lessor from exercising rights against the lessee.
+(3) If the lessee lawfully subleases a leased thing, the lessor may not duly assert against the sublessee the cancellation by agreement of the lease with the lessee;provided, however, that this does not apply if, at the time of the cancellation, the lessor has a right to cancel due to non-performance on the part of the lessee.
+Article 601
+A lease becomes effective if one of the parties promises to make a certain thing available for the other party to use and make profit, and the other party promises to pay rent for the leased thing and return the delivered thing when the contract is terminated.
+Article 606
+(1) A lessor assumes an obligation to effect repairs necessary for using and making profit of the leased thing;provided, however, that this does not apply if repairs are necessary due to any grounds attributable to the lessee.
+(2) A lessee may not refuse if the lessor seeks to engage in an act that is necessary for the preservation of the leased thing.
+query: A concluded the contract with B that A leases his/her two-storied building "X" at a charge of 500,000 yen a month, and delivered the building "X" to B.
+After that, B concluded the contract with C that B subleases the building "X" at a charge of 500,000 yen a month with obtaining the approval of A, and delivered the building "X" to C.
+After a while, C became unable to use the second story of the building "X" due to the leak caused by defect of the roof.
+C may demand B to repair the defect of the roof of the building "X".
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 304
+(1) A statutory lien may also be exercised against things including monies that the obligor is to receive as a result of the sale, lease or loss of, or damage to, the subject matter of the statutory lien;provided, however, that the holder of the statutory lien must attach the same before the payment or delivery of the monies or other thing.
+(2) The provisions of the preceding paragraph also apply to the consideration for real rights created by the obligor on the subject matter of the statutory lien.
+query: A holder of a right of retention may exercise against Things including monies that the obligor is to receive as a result of the loss of the subject matter.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 225
+(1) If two buildings are owned by different owners and there is an open lot between them, each owner may install a fence on the boundary, sharing the expenses with the other owner.
+(2) If no agreement is reached between the parties, the fence referred to in the preceding paragraph must be a wooden fence, a bamboo fence or a fence made of similar material and must be two meters high.
+query: If two buildings are owned by different owners and there is an open lot between them, each owner may install a fence on the boundary, sharing the expenses with the other owner.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: (Remuneration for Result)
+Article 648-2 (1) If the parties agree that remuneration will be paid for any result that may be obtained through the performance of the mandated business, and the result is required to be delivered, remuneration must be paid simultaneously upon the delivery of the result.
+query: If the parties agree that remuneration will be paid for any result that may be obtained through the performance of the mandated business, and the result is required to be delivered, the mandator must pay the remuneration simultaneously upon the delivery of the result.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: (Transfer of Risk for Loss of Subject Matter)
+Article 567 (2) The preceding paragraph also applies if the seller tenders the performance of the obligation of delivery by delivering the subject matter that conforms to the terms of the contract, but the buyer refuses to accept or is unable to accept the performance, and the subject matter is lost or damaged after the time of the tender of the performance due to any grounds not attributable to either party.
+query: A seller of a specific thing tendered the performance of the obligation of the delivery of the subject matter. The buyer refused to accept the subject matter, and thereafter the subject matter was lost due to grounds attributable to neither the seller nor the buyer. In this case, the buyer may cancel the contract.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 87
+(1) If the owner of a first thing attaches a second thing that the owner owns to the first thing to serve the ordinary use of the first thing, the thing that the owner attaches is an appurtenance.
+(2) An appurtenance is disposed of together with the principal thing if the principal thing is disposed of.
+query: In cases where a mortgage is created with respect to a building on leased land, the mortgage may not be exercised against the right of lease.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 504
+(1) If there is a person that has legitimate interest in performing an obligation (hereinafter referred to as a "person entitled to subrogation" in this paragraph), and the obligee causes the security thereof to be lost or diminished intentionally or negligently, the person entitled to subrogation is relieved from responsibility to the extent that that person can no longer seek the reimbursement due to the loss or diminution in the security available upon subrogation. If the person entitled to subrogation is a third-party collateral provider, the same applies to a third party that has acquired from the person entitled to subrogation the property that is the subject of security and to the specific successor thereof.
+(2) The provisions of the preceding paragraph do not apply if the obligee is found to have reasonable grounds in light of the common sense in the transaction for causing the security to be lost or diminished.
+query: In the case where there is a guarantor on an obligation and a mortgage is taken out on land X which an obligor owns for the same obligation, if the guarantor performed the guarantee obligation after an obligee wavied the mortgage, the guarantee may exercise the mortgage as it is not wavied.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 20
+(1) After a person with qualified legal capacity who is involved in dealings with another party becomes a person with the legal capacity to act (meaning a person whose legal capacity to act is not subject to restrictions; the same applies hereinafter), the other party to those dealings may fix a period of one month or longer and demand that the person give a definite answer within that period of time as to whether the person will ratify an act that the person may rescind. In such a case, if the person fails to send a definite answer within that period of time, the person is deemed to have ratified that act.
+(2) The second sentence of the preceding paragraph also applies if, before the person with qualified legal capacity becomes a person with the legal capacity to act, the other party to dealings involving the person with qualified legal capacity lodges the demand prescribed in the preceding paragraph with the legal representative, curator, or assistant of that person with respect to an act within the scope of their authority, and they fail to send a definite answer within the fixed period of time referred to in that paragraph.
+(3) If a person does not send notice within the period of time set forth in the preceding two paragraphs indicating that the person has completed any special formalities that an act requires, the person is deemed to have rescinded that act.
+(4) The other party to dealings involving a person with qualified legal capacity may lodge a demand with a person under curatorship or with a person under assistance who is subject to a decision as referred to in Article 17, paragraph (1) to demand that the person get the curator or assistant to ratify an act within the fixed period referred to in paragraph (1). In such a case, if the person under curatorship or person under assistance does not send notice within that period indicating that the person has gotten the curator or assistant to ratify the act in question, the person is deemed to have rescinded that act.
+query: If a person under curatorship commits a voidable act, the counterparty of that act may issue a notice to any person under curatorship which demands that he/she should obtain the ratification of his/her curator, but may not directly issue the notice to the curator which demands a response of whether or not the curator has ratified.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: (Accession to Immovables)
+Article 242 The owner of immovables acquires ownership of a thing that has been attached thereto as its appurtenance; provided, however, that the rights of the other person that attached that thing by virtue of a title are not prejudiced.
+query: A has leased building X owned by A to B. If B has made an addition to building X with A's consent, the ownership of the addition belongs to B, even if the addition is not independent in trading practices.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 651
+(1) A mandate may be cancelled by either party at any time.
+(2) In the following cases, a party that has cancelled a mandate pursuant to the provisions of the preceding paragraph must compensate for damage suffered by the other party;provided, however, that this does not apply if there was a compelling reason for the cancellation:
+(i) if the party cancels the mandate at a time that is detrimental to the other party; or
+(ii) if the mandator cancels the mandate for which the purpose includes the interests for the mandatary (excluding the profit to be obtained exclusively by receiving remuneration).
+query: A mandate shall not be canceled by a mandatary unless an anavoidable reason to do so.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 467
+(1) The assignment of a claim (including the assignment of a claim that is yet to arise) may not be duly asserted against the applicable obligor or any other third party, unless the assignor gives notice thereof to the obligor or the obligor has consented to the same.
+(2) Notice or consent as referred to in the preceding paragraph may not be duly asserted against a third party other than the obligor unless the notice or the consent is made using an instrument bearing a certified date.
+query: If an obligor acknowledges assignment of a claim  vis-a-vis either the assigner or the assignee, the assignee may raise the assignment as a defense against the obligor.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 680-2 (1) A withdrawing partner is liable to perform obligations of the partnership that have arisen before that partner's withdrawal, to the extent of that partner's previous liability. In such a case, until a creditor receives the full performance of the obligation, the withdrawing partner may demand that the partnership provide security or exempt the partner from liability in relation to the partnership.
+(2) A withdrawing partner acquires a right to reimbursement from the partnership if the partner performs an obligation of the partnership prescribed in the preceding paragraph.
+query: A withdrawing partner is liable to perform obligations of the partnership that have arisen before that partner's withdrawal, to the extent of that partner's previous liability.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+article: Article 643
+A mandate becomes effective when a first party asks a second party with performing a juridical act, and the second party accepts this.
+Article 656
+The provisions of this Section apply mutatis mutandis to entrustments of business that do not constitute juridical acts.
+query: A quasi-mandate shall be effective even if it is not made in writing but a mandate shall not be effective unless it is made in writing.
+prompt to generate first structure: ./duong/init_prompt_angelic_7.2.txt
+model to generate first structure: llama3:70b
+0 / 20 with 20 errors

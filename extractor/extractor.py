@@ -6,12 +6,12 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 class MDATask(dspy.Signature):
-    """Signature for converting legal text to an ADF structure"""
+    """Signature for converting legal context into Answer Set Programming facts."""
     task_definition = dspy.InputField(desc="The definition for the task.")
     retry= dspy.InputField(desc="Whether or not a previous attempt of the task failed. And the current attempt is a retry. The failed answer will be included.")
     failed_answer= dspy.InputField(desc="The failed answer if this is a retry attempt.")
     input_text = dspy.InputField(
-        desc="The input text from which to extract the MDA structure."
+        desc="The input text from which to convert context to the Answer Set Programming facts."
     )
     answer:List[str]= dspy.OutputField()
 
@@ -23,9 +23,10 @@ class MDAExtractor(dspy.Module):
         if file_path_input == "":
             file_path = Path(__file__).parent / "extraction_task.txt"
         else: file_path = Path(__file__).parent / file_path_input
-        print("extraction prompt are using:", file_path)
+        # print("extraction prompt are using:", file_path)
         with file_path.open("r") as file:
             self.task_definition = "".join(file.readlines())
+        self.prompt_path = file_path
 
     def forward(self, text, failed_answer=None):
         retry = False

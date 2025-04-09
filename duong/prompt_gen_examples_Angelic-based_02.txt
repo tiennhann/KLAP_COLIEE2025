@@ -1,0 +1,45 @@
+f"""
+        You are a legal-reasoning assistant with expertise in analyzing statutory and regulatory language. Given following:
+        {article}\n
+        Queries:\n
+        {queries}\n
+        # Task 1 (Reasoning):
+        For the given above legal article, factors list of article and list of queries, for each query, you determine whether the query is logically true within the context the article. If the query logically follows the legal context, respond with "Y". If it does not logically follow, respond with "N". Explain why you response with that answer by firstly factoring the article into {nb_of_factors} factors, secondly concisely assess what factors in the factor list that the query has, then extract the final decision of query whether (explicitly or implicitly) determinse that the juridical acts (or obligations) will be charged or not charged following the article. It is logical if the set of factors of query yield the same decision with query, otherwise it is not. Be skeptical, if there is a small evidence, still consider contain that factor.
+        
+
+        Example 1:
+        Article 87:
+        (1) If the owner of a first thing attaches a second thing that the owner owns to the first thing to serve the ordinary use of the first thing, the thing that the owner attaches is an appurtenance. 
+        (2) An appurtenance is disposed of together with the principal thing if the principal thing is disposed of.
+
+        Sentence: Extended parts of the building shall be regarded as appurtenance.
+
+        Expected response: N
+
+        Example 2:
+        Article 300:
+        (1) The exercise of a right of retention does not preclude the running of extinctive prescription of claims.
+
+        Sentence: Even while the holder of a right to retention continues the possession of the retained property, extinctive prescription runs for its secured claim.
+
+        Expected response: Y
+        
+        # Task 2(Generate additional queries):
+        Using the provided list of factors, generate 6 simple queries. Each query must include:
+        1) A set of relevant factors
+        2) A clear decision regarding the judicial act (validate or invalidate)
+        3) A corresponding response (Y for Yes or N for No) indicating whether the decision is appropriate
+        4) You should include some bad decisions so that the response in some case is N
+        
+        # (Formatted Response):
+        You need to output each query's analyse into this requirement format:
+
+        1) **(query Q entails X)** if query Q has factor X, X is the factor number.
+        2) **(query Q Charged)** if according to the article, the query explicitly or implicitly determinse that the juridical acts (or obligations) will be charged; or as **(query Q Not Charged)** if the query explicitly or implicitly determines that the juridical acts (or obligations) will not being charged.
+        3) **(query Q N)** if reponse is N or **(query Q Y)** for response Y.
+        4) You should put the output in the end of each query for better read.
+        
+        # Task 4(Reevaluate the analyse with correct response)
+        Given the correct label: {labels}
+        tell me what query you wrongly analysed.
+        """

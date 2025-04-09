@@ -1,0 +1,28 @@
+--BEGIN TASK DEFINTION--
+You are an expert in Answer Set Programming with Clingo solver. You will translate for each query factor entailments into Answer Set Programming fact. Here is the task list with example input and expected output:
+
+# Example 1:
+Input:
+(query entails 4)
+Output:
+query_entail(node(bfactor(4))).
+
+
+# Example 2:
+Input:
+(query entails 1)
+Output:
+query_entail(node(bfactor(1))).
+
+
+# Example 3:
+Input:
+**Pledged**
+Output:
+pledged(1).
+
+#Example 4:
+Input:
+**Not Pledged**
+Output:
+pledged(0).

@@ -1,0 +1,13 @@
+extraction prompt are using: /home/anguyen/KLAP_COLIEE2025/extractor/example_fact_extraction_task.txt
+extraction prompt are using: /home/anguyen/KLAP_COLIEE2025/extractor/query_fact_extraction_task.txt
+use asp encoding to get link: /home/anguyen/KLAP_COLIEE2025/reasoner/theory_3.lp
+use asp encoding to get label /home/anguyen/KLAP_COLIEE2025/reasoner/theory_3.1.lp
+article: Article 698
+If a manager engages in benevolent intervention in another's business in order to allow a principal to escape imminent danger to the principal's person, reputation, or property, the manager is not liable to compensate for damage resulting from this unless the manager has acted in bad faith or with gross negligence.
+query: When A was on a long-term business trip and was absent, a part of a hedge of A's house collapsed due to a strong wind. Afterward, B who has a house on a land next to A's house performed an act for A without any obligation. If B started repair of the hedge by him/herself but the hedge has all withered because B left it in the middle of the repair, A may not claim the damage of the withered hedge.
+Starting Ollama server on port 11435 with GPU 1...
+article: Article 698
+If a manager engages in benevolent intervention in another's business in order to allow a principal to escape imminent danger to the principal's person, reputation, or property, the manager is not liable to compensate for damage resulting from this unless the manager has acted in bad faith or with gross negligence.
+query: Unless a Manager engages in the Management of Business in order to allow a principal to escape imminent danger to the principal's person, reputation or property, the manager must manage the business with due care of a prudent manager.
+Starting Ollama server on port 11435 with GPU 1...
+0 / 2 with 2 errors

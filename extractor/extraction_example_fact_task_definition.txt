@@ -1,0 +1,37 @@
+--BEGIN TASK DEFINTION--
+You are an expert in Answer Set Programming with Clingo solver. You will translate the given context into Answer Set Programming facts. Here is the task list with example input and expected output:
+
+
+# Task 1: Generate node factors:
+Given:  <Number of factors : X> or Number of factor: X
+I want the output
+node(bfactor(1..X)).
+
+Example 1:
+Input: <Number of factors : 9>
+Output: node(bfactor(1..9)).
+
+Example 2:
+Input: Number of factors: 7
+Output: node(bfactor(1..7)).
+
+# Taks 2: Generate factor example
+Given the case 3:
+Ex 3: (1, 2, 3, 4 | False)
+I want the asp facts:
+
+query_entail(node(bfactor(1)), ex(3)).
+query_entail(node(bfactor(2)), ex(3)).
+query_entail(node(bfactor(3)), ex(3)).
+query_entail(node(bfactor(4)), ex(3)).
+pledged(false, ex(3)).
+
+Explain:
+- Factors (1, 2, 3, 4) to node(bfactor(1)) node(bfactor(2)) node(bfactor(3)) node(bfactor(4))
+
+- Ex 3 to ex(3)
+
+- false label then false in pledged(false, ex(3))
+  if true label then true
+
+Note: You must output both result for Task 1 and Task 2.

@@ -8,13 +8,14 @@ class ExtractorException(Exception):
         super.__init__(reply, explanation)
 
 class Answerer:
-    def __init__(self, extractor_prompt_filename="", debug=False):
+    def __init__(self, extractor_prompt_filename="", theory_filename="", prompt_filename ="",debug=False):
         self.extractor = MDAExtractor(file_path_input=extractor_prompt_filename)
-        self.reasoner = Reasoner()
+        self.reasoner = Reasoner(theory_name=theory_filename)
         self.debug = debug
+        self.prompt_file = prompt_filename
 
     def answer(self, article, query):
-        reply = chat(article, query)
+        reply = chat(article, query, prompt_input_path=self.prompt_file)
         if self.debug:
             print("======== Angelic extraction step: ======== \n", reply)
         facts = self.extractor.forward(text=reply)

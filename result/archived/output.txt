@@ -1,0 +1,121 @@
+extraction prompt are using: /home/anguyen/KLAP_COLIEE2025/extractor/extraction_query_arguments.txt
+use theory: /home/anguyen/KLAP_COLIEE2025/reasoner/theory_4.lp
+article: Article 587
+A loan for consumption becomes effective when a first party receives money or any other thing from a second party, having promised to return a thing of the same type, quality, and quantity.
+Article 589
+(1) In the absence of any special agreement, the lender may not demand interest from the borrower.
+(2) If there is any special agreement referred to in the preceding paragraph, the lender may demand from the borrower interest that accrues from the day on which the borrower receives the thing such as money.
+query: If the parties do not stipulate interest, a loans for consumption under the civil code shall become a loan for consumption without interest.
+prompt to generate first structure: You are a legal-reasoning assistant with expertise in analyzing statutory and regulatory language.
+
+INSTRUCTIONS:
+1. Read the following legal article or provision carefully.
+2. Break down the text into four separate categories:
+   - **Context(s)**. Identify who is the plaintiff and who is the defendant. Indicate the defendant’s action that gives rise to legal justification.
+   - **Condition(s)** (the specific circumstances or triggers under which the rule applies). Outline the specific circumstances or triggers that cause the rule to apply. If multiple conditions can independently trigger the rule, list them separately. If the text uses “and,” combine those conditions within the same bullet. If the text uses “or,” place those conditions in separate bullets. If no keyword is present, assume they belong in the same bullet.
+   - **Legal Consequence(s)** (the outcome or effect that arises once the conditions are met). State the outcome or effect when the listed conditions are met. Clearly describe the resulting effects on both defendant and plaintiff.
+   - **Exception(s)** (any limitations or circumstances that negate or modify the rule or consequences)
+
+IMPORTANT:
+- Each category must remain distinct; do **not** include details that belong to another category.
+  - For example, do not place condition statements in the “Rule” category, and do not place exceptions in the “Conditions” category.
+- If something fits more than one category, choose the **most specific** category. 
+- Present your final output in the exact structured format shown below.
+
+TEXT TO ANALYZE:
+"{{Insert your legal text or article here}}"
+
+OUTPUT FORMAT (NON-OVERLAPPING CATEGORIES):
+-------------------------
+**Rule(s)**:
+[Summarize only the general principle(s) here; do not include conditions, consequences, or exceptions]
+
+**Condition(s)**:
+[Summarize only the conditions or triggers under which the rule applies; do not include rules, consequences, or exceptions]. Presenting as a list: Condition 1: ; Condition 2: ;
+
+**Legal Consequence(s)**:
+[Summarize only the effect or outcome that arises once the conditions are met; do not include the rule or exceptions here]
+
+**Exception(s)**:
+[Summarize only the circumstances in which the rule/consequence does not apply or is altered; do not include the rule or conditions here]
+-------------------------
+
+Please ensure your final answer keeps all four categories separate with no overlap.
+
+After that, identify the plaintiff and defendant of the given query. Answering following questions given that agurments structure, you can use information from previous questions to answer next:
+
+1. Identify the Plaintiff and Defendant, what the conclusion on defedant of query?[You do not have to output any format here]
+    
+2. Is that defendant's conclusion in the query the same as or opposite to the legal consequence(outcome) stated in the article? Answer “Yes” if they are the same, and “No” if they are opposite. Output format example: (Query, Outcome, Yes) or (Query, Outcome, No)
+
+3. Justify if the defendant in the query meet each condition in the Conditions section of articles. Answer "Yes" or "No" and specifies condition number. Output format example: (Query, Condition 1, Yes)
+
+4. Does the defendant in the query have any exception from Exception section?: Answer "Yes" if there is any evidence indicating an exception; otherwise, "No". Output format example: (Query, Exception 1, No)
+
+At the end, output the justification of query into format such as:
+
+Query(<Type>, Yes/No)
+
+Replace <Type> with Outcome, Exception, Condition.
+model to generate first structure: llama3:70b
+======== Angelic extraction step: ======== 
+ Let's analyze the legal article and query.
+
+**Article Analysis**
+
+TEXT TO ANALYZE:
+"Article 587
+A loan for consumption becomes effective when a first party receives money or any other thing from a second party, having promised to return a thing of the same type, quality, and quantity.
+Article 589
+(1) In the absence of any special agreement, the lender may not demand interest from the borrower.
+(2) If there is any special agreement referred to in the preceding paragraph, the lender may demand from the borrower interest that accrues from the day on which the borrower receives the thing such as money."
+
+OUTPUT FORMAT:
+
+**Rule(s)**:
+A loan for consumption becomes effective when a party receives something and promises to return it. The lender may or may not demand interest depending on the agreement.
+
+**Condition(s)**:
+Condition 1: A first party receives money or any other thing from a second party.
+Condition 2: The parties have a special agreement regarding interest.
+Condition 3: There is no special agreement regarding interest.
+
+**Legal Consequence(s)**:
+The loan for consumption becomes effective, and the lender may demand interest if there is a special agreement.
+
+**Exception(s)**:
+Exception 1: In the absence of any special agreement, the lender may not demand interest from the borrower.
+
+**Query Analysis**
+
+QUERY:
+"If the parties do not stipulate interest, a loans for consumption under the civil code shall become a loan for consumption without interest."
+
+1. Identify the Plaintiff and Defendant:
+
+In this query, there is no specific plaintiff or defendant mentioned. However, in the context of a loan for consumption, the lender can be considered the plaintiff, and the borrower can be considered the defendant.
+
+The conclusion on the defendant (borrower) of the query is that they do not have to pay interest if there is no special agreement regarding interest.
+
+2. Is that defendant's conclusion in the query the same as or opposite to the legal consequence(outcome) stated in the article?
+
+(Query, Outcome, Yes)
+
+3. Justify if the defendant in the query meet each condition:
+
+(Query, Condition 1, No)
+(Query, Condition 2, No)
+(Query, Condition 3, Yes)
+
+4. Does the defendant in the query have any exception from Exception section?:
+
+(Query, Exception 1, Yes)
+
+**Justification of Query**
+
+Query(Outcome, Yes)
+======== ASP facts conversion step: ======= 
+ query_outcome(1).query_condition(1, 0).query_condition(2, 0).query_condition(3, 1).query_exception(1, 1).
+true label: Y  - predicted label: N
+0 correct 1 wrongs 1 out of 1 tested
+0 / 1 with 0 errors

@@ -2,12 +2,12 @@ node(root(1)). node(afactor(1;2;3;7)). node(bfactor(1..7)).
 
 
 % 
-link(support(node(bfactor(1)), node(afactor(1)))). 
-link(support(node(bfactor(7)), node(afactor(7)))). 
-link(support(node(bfactor(4)), node(afactor(2)))). 
-link(support(node(bfactor(5)), node(afactor(2)))). 
-link(support(node(bfactor(6)), node(afactor(2)))). 
-link(support(node(bfactor(2)), node(afactor(3)))). 
+link(support(node(bfactor(1)), node(afactor(1)))).
+link(support(node(bfactor(7)), node(afactor(7)))).
+link(support(node(bfactor(4)), node(afactor(2)))).
+link(support(node(bfactor(5)), node(afactor(2)))).
+link(support(node(bfactor(6)), node(afactor(2)))).
+link(support(node(bfactor(2)), node(afactor(3)))).
 link(support(node(bfactor(3)), node(afactor(3)))).
 
 % example 4
